@@ -16,13 +16,13 @@
       "monoFont": "JetBrains Mono, Courier New, monospace"
     },
     "palette": {
-      "backgroundColor": "#F6F4EE",
-      "surfaceColor": "#EDEAE0",
-      "textPrimary": "#1A1715",
-      "textSecondary": "#6B655E",
-      "accentLineColor": "#B93826",
-      "borderColor": "#DDD8CB",
-      "specimenBgColor": "#121110"
+      "backgroundColor": "#FAF8F5",
+      "surfaceColor": "#F3EFE8",
+      "textPrimary": "#181513",
+      "textSecondary": "#6E675F",
+      "accentLineColor": "#382218",
+      "borderColor": "#E7E1D7",
+      "specimenBgColor": "#11100F"
     }
   },
   "items": [

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface MuseumLabelProps {
   item: ArchivalItem;
   className?: string;
-  variant?: "wall-pinned" | "compact" | "lightbox";
+  variant?: "wall-pinned" | "lightbox";
   onInspect?: () => void;
 }
 
@@ -23,19 +23,19 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
   const isBrutalist = aestheticType === "brutalist-technical";
   const isEditorial = aestheticType === "editorial-serif";
 
-  // Lightbox view: Full scholarly museum record with complete provenance and custody
+  // Lightbox: Scholarly Museum Dossier
   if (variant === "lightbox") {
     return (
       <article
-        aria-label={`Detailed curatorial dossier for ${item.title}`}
+        aria-label={`Curatorial dossier for ${item.title}`}
         className={cn("relative select-text max-w-md", className)}
       >
         {isEditorial && (
-          <div className="w-10 h-[1.5px] bg-[var(--color-accent)] mb-6" />
+          <div className="w-12 h-[1.5px] bg-[#CBB5A1] mb-8" />
         )}
 
         {/* Accession Header */}
-        <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-[#9E9A90] uppercase mb-3">
+        <div className="flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] text-[#8E8A82] uppercase mb-4">
           <span>{item.id}</span>
           <span className="opacity-40">/</span>
           <span>{item.date}</span>
@@ -50,9 +50,9 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         {/* Title */}
         <h2
           className={cn(
-            "text-2xl leading-tight text-white mb-3",
+            "text-2xl sm:text-3xl leading-snug text-[#F5F2EB] mb-4",
             isEditorial
-              ? "font-serif italic font-normal"
+              ? "font-serif italic font-normal tracking-tight"
               : isBrutalist
               ? "font-mono font-bold uppercase text-lg"
               : "font-sans font-semibold"
@@ -62,33 +62,28 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         </h2>
 
         {/* Physical Specimen Details */}
-        <div className="space-y-1 text-xs text-[#BCB7AC] leading-relaxed mb-6">
-          <p className="text-white/90">{item.medium}</p>
-          <p className="font-mono text-[11px] opacity-80">{item.dimensions}</p>
+        <div className="space-y-1.5 text-xs text-[#BCB7AC] leading-relaxed mb-6 font-serif">
+          <p className="text-white/90 italic">{item.medium}</p>
+          <p className="font-mono text-[11px] opacity-75">{item.dimensions}</p>
           {item.location && (
-            <p className="text-[11px] italic opacity-60">Archive Location: {item.location}</p>
+            <p className="text-[11px] opacity-60 font-mono">Location: {item.location}</p>
           )}
         </div>
 
-        {/* Provenance & Custody Trail */}
+        {/* Provenance Trail */}
         {item.provenanceText && (
-          <div className="pt-4 border-t border-white/10">
-            <span className="block text-[10px] font-mono uppercase tracking-widest text-[var(--color-accent)] mb-2 font-semibold">
-              Provenance & Custodial Trail
+          <div className="pt-6 border-t border-white/10">
+            <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBB5A1] mb-2 font-medium">
+              Custodial History & Provenance
             </span>
-            <p
-              className={cn(
-                "text-xs leading-relaxed text-[#BCB7AC]",
-                isEditorial ? "font-serif text-[13px]" : "font-sans text-xs"
-              )}
-            >
+            <p className="text-xs leading-relaxed text-[#BCB7AC] font-serif">
               {item.provenanceText}
             </p>
           </div>
         )}
 
-        {/* Rights & Department Metadata */}
-        <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center gap-2 text-[10px] font-mono text-[#8C887F]">
+        {/* Rights & Department */}
+        <div className="mt-8 pt-4 border-t border-white/10 flex flex-wrap items-center gap-2 text-[10px] font-mono text-[#8C887F]">
           {item.department && <span>{item.department}</span>}
           {item.rightsStatement && (
             <>
@@ -101,19 +96,14 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
     );
   }
 
-  // Gallery Wall Pinned view: Streamlined, breathable, zero text walls!
+  // Gallery Wall: Minimal, authentic, zero AI slop
   return (
-    <div
-      className={cn(
-        "relative select-text pt-4 transition-colors",
-        className
-      )}
-    >
-      {/* Title & Date */}
-      <div className="flex items-baseline justify-between gap-4 mb-1.5">
+    <div className={cn("relative select-text pt-4", className)}>
+      <div className="flex items-baseline justify-between gap-4 mb-1">
         <h3
+          onClick={onInspect}
           className={cn(
-            "text-lg sm:text-xl font-normal leading-snug text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors",
+            "text-xl font-normal leading-tight text-[var(--color-text-primary)] cursor-pointer hover:opacity-70 transition-opacity",
             isEditorial
               ? "font-serif italic"
               : isBrutalist
@@ -128,18 +118,15 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         </span>
       </div>
 
-      {/* Medium & Dimensions */}
-      <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed mb-3">
-        {item.medium} <span className="opacity-40">•</span> {item.dimensions}
+      <p className="text-xs text-[var(--color-text-secondary)] font-serif italic mb-3">
+        {item.medium} <span className="opacity-40 not-italic">•</span> <span className="font-mono not-italic text-[11px]">{item.dimensions}</span>
       </p>
 
-      {/* Subtle Call to Action */}
       <button
         onClick={onInspect}
-        className="inline-flex items-center gap-1.5 text-[11px] font-mono tracking-wider uppercase text-[var(--color-accent)] opacity-80 hover:opacity-100 transition-opacity"
+        className="text-[11px] font-mono tracking-[0.16em] uppercase text-[var(--color-accent)] opacity-80 hover:opacity-100 transition-opacity"
       >
-        <span>Examine Specimen</span>
-        <span aria-hidden="true">→</span>
+        Examine Specimen →
       </button>
     </div>
   );

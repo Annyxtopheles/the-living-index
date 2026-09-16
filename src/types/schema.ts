@@ -1,7 +1,6 @@
 export type AestheticType = 
   | 'editorial-serif' 
-  | 'brutalist-technical' 
-  | 'mid-century-modern';
+  | 'brutalist-technical';
 
 export interface TypographyTokens {
   headerFont: string;
@@ -33,7 +32,6 @@ export interface ArchivalItem {
   provenanceText: string;
   highResImageUrl: string;
   tags: string[];
-  // Optional museum-grade metadata extensions
   aspectRatio?: number;
   catalogNumber?: string;
   department?: string;
@@ -47,7 +45,6 @@ export interface CollectionMetadata {
   curator: string;
   description: string;
   aestheticType: AestheticType;
-  // Optional archival headers
   institution?: string;
   curatorialStatement?: string;
   editionDate?: string;

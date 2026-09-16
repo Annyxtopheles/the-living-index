@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-bg: #F6F4EE;
-  --color-surface: #EDEAE0;
-  --color-text-primary: #1A1715;
-  --color-text-secondary: #6B655E;
-  --color-accent: #B93826;
-  --color-border: #DDD8CB;
-  --color-specimen-bg: #121110;
-  --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --color-bg: #FAF8F5; /* Luminous warm ivory / archival rag */
+  --color-surface: #F3EFE8;
+  --color-text-primary: #181513; /* Carbon bone-black */
+  --color-text-secondary: #6E675F; /* Warm graphite */
+  --color-accent: #382218; /* Deep bitter chocolate / raw umber */
+  --color-border: #E7E1D7; /* Fine parchment hairline */
+  --color-specimen-bg: #11100F;
+  --font-heading: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Newsreader', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -26,7 +26,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Editorial typography tweaks */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
 h1, h2, h3, .font-heading {
   font-family: var(--font-heading);
 }
@@ -35,10 +39,10 @@ code, kbd, samp, pre, .font-mono {
   font-family: var(--font-mono);
 }
 
-/* Custom scrollbar matching gallery minimalism */
+/* Authentic gallery minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-bg);

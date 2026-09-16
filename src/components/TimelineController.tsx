@@ -5,7 +5,6 @@ import { ArchivalItem } from "@/types/schema";
 import { computeTimelineBounds, extractYear } from "@/lib/dateUtils";
 import { useTheme } from "@/context/ThemeContext";
 import { cn } from "@/lib/utils";
-import { Calendar, RotateCcw } from "lucide-react";
 
 interface TimelineControllerProps {
   items: ArchivalItem[];
@@ -24,7 +23,7 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
 
   const bounds = useMemo(() => computeTimelineBounds(items), [items]);
 
-  // Group specimens into distinct chronological eras / decades
+  // Group specimens into distinct decades
   const eras = useMemo(() => {
     const eraMap: Record<string, { label: string; count: number; years: number[] }> = {};
 
@@ -46,7 +45,6 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
       .sort((a, b) => parseInt(a.key) - parseInt(b.key));
   }, [items]);
 
-  // All individual sorted years
   const individualYears = useMemo(() => {
     const set = new Set<number>();
     items.forEach((i) => {
@@ -57,117 +55,97 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
   }, [items]);
 
   const isBrutalist = aestheticType === "brutalist-technical";
-  const isEditorial = aestheticType === "editorial-serif";
 
   return (
     <div
-      aria-label="Chronological Era Filter"
+      aria-label="Chronological Axis"
       className={cn(
-        "p-6 border border-[var(--color-border)] bg-[var(--color-surface)]/40 transition-colors mb-12",
+        "py-6 px-8 border border-[var(--color-border)] bg-[var(--color-surface)]/40 transition-colors mb-16",
         className
       )}
     >
-      {/* Header telemetry and title */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-[var(--color-border)]">
-        <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-[var(--color-text-secondary)] uppercase">
-          <Calendar className="w-3.5 h-3.5 text-[var(--color-accent)]" />
+      {/* Header bar */}
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-4 mb-6 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.2em] uppercase text-[var(--color-text-secondary)]">
+        <div>
           <span className="font-semibold text-[var(--color-text-primary)]">
-            Chronological Filter
+            Chronological Axis
           </span>
-          <span className="opacity-40">/</span>
-          <span>
-            {bounds.minYear} — {bounds.maxYear}
-          </span>
+          <span className="opacity-30 mx-2">/</span>
+          <span>{bounds.minYear} — {bounds.maxYear}</span>
+          {selectedYear && (
+            <span className="text-[var(--color-accent)] font-semibold ml-3">
+              — {selectedYear}
+            </span>
+          )}
         </div>
 
-        {selectedYear !== null ? (
+        {selectedYear !== null && (
           <button
             onClick={() => onSelectYear(null)}
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-[var(--color-accent)] hover:underline uppercase self-start sm:self-auto"
+            className="text-[11px] text-[var(--color-accent)] hover:underline uppercase self-start sm:self-auto"
           >
-            <RotateCcw className="w-3 h-3" />
-            <span>Reset Timeline (Show All {items.length})</span>
+            Reset (Show All)
           </button>
-        ) : (
-          <span className="text-[11px] font-mono text-[var(--color-text-secondary)]">
-            Showing all catalogued years
-          </span>
         )}
       </div>
 
-      {/* Clear Era Selector Pills */}
-      <div className="flex flex-wrap items-center gap-2 mb-6">
+      {/* Decade Selector */}
+      <div className="flex flex-wrap items-center gap-6 mb-6 text-xs font-mono uppercase tracking-[0.16em]">
         <button
           onClick={() => onSelectYear(null)}
           className={cn(
-            "px-3 py-1.5 text-xs font-mono tracking-wider uppercase transition-all",
+            "pb-0.5 transition-colors",
             selectedYear === null
-              ? "bg-[var(--color-text-primary)] text-[var(--color-bg)] font-semibold"
-              : "border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+              ? "text-[var(--color-text-primary)] font-semibold border-b border-[var(--color-accent)]"
+              : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
           )}
         >
-          All Eras
+          All Decades
         </button>
 
         {eras.map((era) => {
-          // An era is active if selectedYear matches one of its years
           const isActive = selectedYear !== null && era.years.includes(selectedYear);
 
           return (
             <button
               key={era.key}
-              onClick={() => {
-                // If already active, toggle off. Otherwise select the first year of the era
-                if (isActive) {
-                  onSelectYear(null);
-                } else {
-                  onSelectYear(era.years[0]);
-                }
-              }}
+              onClick={() => onSelectYear(isActive ? null : era.years[0])}
               className={cn(
-                "px-3 py-1.5 text-xs font-mono tracking-wider uppercase transition-all flex items-center gap-1.5",
+                "pb-0.5 transition-colors flex items-center gap-1.5",
                 isActive
-                  ? "bg-[var(--color-accent)] text-white font-semibold"
-                  : "border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+                  ? "text-[var(--color-text-primary)] font-semibold border-b border-[var(--color-accent)]"
+                  : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
               )}
             >
               <span>{era.label}</span>
-              <span className="opacity-60 text-[10px]">({era.count})</span>
+              <span className="opacity-50 text-[10px]">({era.count})</span>
             </button>
           );
         })}
       </div>
 
-      {/* Interactive Year Timeline Bar */}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-[11px] font-mono text-[var(--color-text-secondary)]">
-          <span>{bounds.minYear}</span>
-          <span className="text-[var(--color-accent)] font-semibold">
-            {selectedYear ? `Year: ${selectedYear}` : "Select specific specimen year"}
-          </span>
-          <span>{bounds.maxYear}</span>
-        </div>
-
-        {/* Clickable Year Ticks Strip */}
-        <div className="flex items-center justify-between gap-1 p-2 bg-[var(--color-bg)] border border-[var(--color-border)] overflow-x-auto">
-          {individualYears.map((year) => {
-            const isSelected = selectedYear === year;
-            return (
-              <button
-                key={year}
-                onClick={() => onSelectYear(isSelected ? null : year)}
-                className={cn(
-                  "px-2.5 py-1 text-xs font-mono transition-all shrink-0",
-                  isSelected
-                    ? "bg-[var(--color-accent)] text-white font-bold"
-                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]"
-                )}
-              >
-                {year}
-              </button>
-            );
-          })}
-        </div>
+      {/* Individual Year Strip */}
+      <div className="flex items-center gap-2 pt-2 border-t border-[var(--color-border)]/60 overflow-x-auto text-xs font-mono">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-text-secondary)] opacity-60 mr-2 shrink-0">
+          Year:
+        </span>
+        {individualYears.map((year) => {
+          const isSelected = selectedYear === year;
+          return (
+            <button
+              key={year}
+              onClick={() => onSelectYear(isSelected ? null : year)}
+              className={cn(
+                "px-2.5 py-1 transition-all shrink-0",
+                isSelected
+                  ? "bg-[var(--color-accent)] text-[var(--color-bg)] font-semibold"
+                  : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+              )}
+            >
+              {year}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

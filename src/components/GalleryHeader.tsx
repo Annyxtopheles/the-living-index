@@ -5,7 +5,6 @@ import { CollectionMetadata } from "@/types/schema";
 import { useTheme } from "@/context/ThemeContext";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { cn } from "@/lib/utils";
-import { BookOpen, X } from "lucide-react";
 
 interface GalleryHeaderProps {
   metadata: CollectionMetadata;
@@ -20,105 +19,94 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
   const isBrutalist = aestheticType === "brutalist-technical";
 
   return (
-    <header className="mb-16 pt-4 pb-10 border-b border-[var(--color-border)] transition-colors duration-500">
-      {/* Top Minimal Navigation Bar */}
-      <div className="flex items-center justify-between pb-6 mb-12 border-b border-[var(--color-border)]">
-        <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-[var(--color-text-secondary)] uppercase">
-          <span className="w-2 h-2 bg-[var(--color-accent)] inline-block" />
+    <header className="mb-20 pt-6 pb-12 border-b border-[var(--color-border)] transition-colors duration-500">
+      {/* Top Ledger Masthead */}
+      <div className="flex items-center justify-between pb-8 mb-16 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.22em] uppercase text-[var(--color-text-secondary)]">
+        <div className="flex items-center gap-3">
           <span className="font-semibold text-[var(--color-text-primary)]">
-            {metadata.name.split(":")[0] || "THE LIVING INDEX"}
+            CABINET DES ÉPHÉMÈRES
           </span>
-          <span className="opacity-40 hidden sm:inline">/</span>
-          <span className="hidden sm:inline opacity-70">
-            {metadata.editionDate || "EDITION 2026"}
-          </span>
+          <span className="opacity-30">/</span>
+          <span className="opacity-70">{metadata.editionDate || "MMXXVI"}</span>
         </div>
 
-        <div className="flex items-center gap-3">
-          <ThemeSwitcher />
-        </div>
+        <ThemeSwitcher />
       </div>
 
-      {/* Main Editorial Masthead */}
-      <div className="space-y-6">
-        {/* Subtle accent rule inspired by Harriet */}
+      {/* Main Exhibition Identity — Pure Editorial Authority */}
+      <div className="space-y-8">
+        {/* Subtle chocolate hairline accent */}
         {isEditorial && (
-          <div className="w-12 h-[2px] bg-[var(--color-accent)] mb-4" />
+          <div className="w-12 h-[1.5px] bg-[var(--color-accent)] mb-8 opacity-85" />
         )}
 
-        <div className="flex flex-wrap items-baseline gap-3 text-xs font-mono uppercase tracking-widest text-[var(--color-text-secondary)]">
-          <span className="text-[var(--color-accent)] font-semibold">
-            {metadata.institution || "Scholarly Archive"}
-          </span>
-          <span className="opacity-40">•</span>
-          <span>{totalItems} Master Specimens</span>
+        <div className="flex items-baseline gap-4 text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
+          <span className="text-[var(--color-accent)] font-semibold">Catalogue Raisonné</span>
+          <span className="opacity-30">—</span>
+          <span>{totalItems} Objects Pinned</span>
         </div>
 
+        {/* High-Impact Avant-Garde Title */}
         <h1
           className={cn(
-            "text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] tracking-tight text-[var(--color-text-primary)] max-w-5xl",
+            "text-5xl sm:text-7xl lg:text-8xl font-normal leading-[0.98] tracking-tight text-[var(--color-text-primary)] max-w-5xl",
             isEditorial
               ? "font-serif tracking-tight"
               : isBrutalist
-              ? "font-mono font-bold uppercase tracking-tight"
+              ? "font-mono font-bold uppercase tracking-tighter"
               : "font-sans font-semibold"
           )}
         >
-          {metadata.name}
+          Cabinet des Éphémères
         </h1>
 
-        {/* Short, digestible curatorial subline */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-          <p className="text-sm sm:text-base text-[var(--color-text-secondary)] max-w-2xl leading-relaxed">
-            Curated by <strong className="text-[var(--color-text-primary)] font-medium">{metadata.curator}</strong>.{" "}
-            {metadata.description}
+        {/* Curatorial Subtext & Expandable Statement */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-4 items-baseline">
+          <p className="md:col-span-8 text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed font-serif italic">
+            Curated by <span className="text-[var(--color-text-primary)] not-italic font-normal">{metadata.curator}</span>. {metadata.description}
           </p>
 
-          {/* Curatorial Statement Modal Trigger */}
-          {metadata.curatorialStatement && (
-            <button
-              onClick={() => setShowStatement(true)}
-              className="inline-flex items-center gap-2 text-xs font-mono tracking-wider uppercase text-[var(--color-accent)] hover:underline whitespace-nowrap self-start sm:self-auto"
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Read Curatorial Note</span>
-            </button>
-          )}
+          <div className="md:col-span-4 md:text-right">
+            {metadata.curatorialStatement && (
+              <button
+                onClick={() => setShowStatement(true)}
+                className="text-xs font-mono tracking-[0.18em] uppercase text-[var(--color-text-primary)] hover:text-[var(--color-accent)] pb-0.5 border-b border-[var(--color-accent)] transition-colors"
+              >
+                Curatorial Note [ + ]
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Curatorial Statement Dialog */}
+      {/* Curatorial Note Modal */}
       {showStatement && (
         <div
           role="dialog"
           aria-modal="true"
           className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm"
         >
-          <div className="relative max-w-xl w-full bg-[var(--color-bg)] border border-[var(--color-border)] p-8 sm:p-10 shadow-2xl">
-            <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--color-border)]">
-              <span className="text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] font-semibold">
+          <div className="relative max-w-xl w-full bg-[var(--color-bg)] border border-[var(--color-border)] p-10 sm:p-12 shadow-2xl">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-[var(--color-border)]">
+              <span className="text-xs font-mono tracking-[0.25em] uppercase text-[var(--color-accent)] font-semibold">
                 Curatorial Note
               </span>
               <button
                 onClick={() => setShowStatement(false)}
-                className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+                className="text-xs font-mono uppercase tracking-widest text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
               >
-                <X className="w-4 h-4" />
+                Close [ × ]
               </button>
             </div>
 
-            <blockquote
-              className={cn(
-                "text-base sm:text-lg leading-relaxed text-[var(--color-text-primary)] mb-6",
-                isEditorial ? "font-serif italic" : "font-sans"
-              )}
-            >
+            <blockquote className="text-lg leading-relaxed text-[var(--color-text-primary)] mb-8 font-serif italic">
               &ldquo;{metadata.curatorialStatement}&rdquo;
             </blockquote>
 
-            <p className="text-xs font-mono text-[var(--color-text-secondary)]">
-              — {metadata.curator}, {metadata.institution}
-            </p>
+            <div className="pt-4 border-t border-[var(--color-border)] text-xs font-mono text-[var(--color-text-secondary)] flex justify-between">
+              <span>{metadata.curator}</span>
+              <span>{metadata.institution}</span>
+            </div>
           </div>
         </div>
       )}
