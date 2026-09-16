@@ -1,13 +1,13 @@
 {
   "collectionMetadata": {
-    "name": "The Living Index: Specimen Archive No. 04",
+    "name": "Cabinet des Éphémères: Specimen Archive No. 04",
     "curator": "Hélène de Saint-Germain",
     "institution": "Cabinet des Éphémères & Modernist Studies",
     "description": "A curated repository of 20th-century avant-garde typography, structural constructivism, and tectonic abstractions. Catalogued directly from independent private archives under an open scholarly ledger.",
     "curatorialStatement": "Every archival specimen preserved herein represents a deliberate departure from decorative historicism towards raw tectonic autonomy. We present these objects without theatrical ornament, honoring their physical medium, scale, and provenance.",
     "aestheticType": "editorial-serif",
     "editionDate": "Autumn 2026",
-    "githubRepoUrl": "https://github.com/the-living-index/archive-specimens"
+    "githubRepoUrl": "https://github.com/Annyxtopheles/the-living-index"
   },
   "themingTokens": {
     "typography": {

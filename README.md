@@ -1,8 +1,8 @@
-# The Living Index 🏛️
+# Cabinet des Éphémères 🏛️
 
 > A museum-grade digital collection framework engineered for independent collectors, gallery archivists, and curators.
 
-**The Living Index** is an open-source, serverless, zero-maintenance digital archival platform. In alignment with modern decentralized and static web standards, it uses GitHub as its database via a single version-controlled `collection.json` file and compiles into a static web application deployable directly to Vercel, Cloudflare Pages, or GitHub Pages.
+**Cabinet des Éphémères** is an open-source, serverless, zero-maintenance digital archival platform. In alignment with modern decentralized and static web standards, it uses GitHub as its database via a single version-controlled `collection.json` file and compiles into a static web application deployable directly to Vercel, Cloudflare Pages, or GitHub Pages.
 
 ---
 
