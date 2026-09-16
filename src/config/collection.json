@@ -1,0 +1,150 @@
+{
+  "collectionMetadata": {
+    "name": "The Living Index: Specimen Archive No. 04",
+    "curator": "Hélène de Saint-Germain",
+    "institution": "Cabinet des Éphémères & Modernist Studies",
+    "description": "A curated repository of 20th-century avant-garde typography, structural constructivism, and tectonic abstractions. Catalogued directly from independent private archives under an open scholarly ledger.",
+    "curatorialStatement": "Every archival specimen preserved herein represents a deliberate departure from decorative historicism towards raw tectonic autonomy. We present these objects without theatrical ornament, honoring their physical medium, scale, and provenance.",
+    "aestheticType": "editorial-serif",
+    "editionDate": "Autumn 2026",
+    "githubRepoUrl": "https://github.com/the-living-index/archive-specimens"
+  },
+  "themingTokens": {
+    "typography": {
+      "headerFont": "Cinzel, Cormorant Garamond, Georgia, serif",
+      "bodyFont": "Newsreader, Georgia, serif",
+      "monoFont": "JetBrains Mono, Courier New, monospace"
+    },
+    "palette": {
+      "backgroundColor": "#F6F4EE",
+      "surfaceColor": "#EDEAE0",
+      "textPrimary": "#1A1715",
+      "textSecondary": "#6B655E",
+      "accentLineColor": "#B93826",
+      "borderColor": "#DDD8CB",
+      "specimenBgColor": "#121110"
+    }
+  },
+  "items": [
+    {
+      "id": "IDX-1924-001",
+      "title": "Composition in Spatial Tension (Study VIII)",
+      "date": "1924",
+      "medium": "Oil and graphite on unprimed Belgian linen",
+      "dimensions": "124.5 × 92.0 cm",
+      "provenanceText": "Acquired directly from the artist's Weimar studio by Dr. Heinrich Voss, 1928; thence by descent to Voss Galerie, Zurich; private collection, Paris, 1974; bequest to The Living Index Foundation, 2019.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Constructivism", "Bauhaus", "Geometric Abstraction"],
+      "aspectRatio": 0.74,
+      "catalogNumber": "CAT-BAU-042",
+      "department": "Department of Structural Modernism",
+      "rightsStatement": "Public Domain Mark 1.0 (Scholarly Non-Commercial Index)",
+      "location": "Vault 2, Climate Compartment C"
+    },
+    {
+      "id": "IDX-1931-002",
+      "title": "Study of Shadow and Linear Tectonics",
+      "date": "1931",
+      "medium": "Gelatin silver print mounted on heavy rag board",
+      "dimensions": "40.6 × 30.5 cm",
+      "provenanceText": "Printed under the supervision of the artist, Berlin; confiscated during 1937 Entartete Kunst purge; recovered from storage in Munich, 1946; acquired by Maurice & Claire Danvers, Geneva, 1961.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["New Vision", "Photography", "Monochrome"],
+      "aspectRatio": 1.33,
+      "catalogNumber": "CAT-PHO-108",
+      "department": "Cabinet of Photographic Masterworks",
+      "rightsStatement": "Scholarly Open Ledger CC-BY-NC 4.0",
+      "location": "Print Box VII"
+    },
+    {
+      "id": "IDX-1947-003",
+      "title": "Nocturne with Ochre and Iron Oxide",
+      "date": "1947",
+      "medium": "Distemper and dry pigment on weathered timber panel",
+      "dimensions": "86.0 × 61.2 cm",
+      "provenanceText": "Studio of the artist, Saint-Paul-de-Vence; Galerie Pierre Loeb, Paris, 1952; Collection of Sir Kenneth Clark, London; Christie's London, June 1989, Lot 44; Private Archive, Montreal.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Tachisme", "Organic Abstraction", "Post-War"],
+      "aspectRatio": 0.71,
+      "catalogNumber": "CAT-ABS-219",
+      "department": "Department of Post-War European Abstraction",
+      "rightsStatement": "Archival Fair Use / Scholarly Record",
+      "location": "Main Hall Screen 04"
+    },
+    {
+      "id": "IDX-1958-004",
+      "title": "Modular Rhythm in Red and Cadmium Orange",
+      "date": "1958",
+      "medium": "Screenprint on heavy wove Arches paper, trial proof",
+      "dimensions": "76.2 × 56.0 cm",
+      "provenanceText": "Edition printed by Atelier 17, Paris; gift from the master printer to Suzanne Valadier; acquired at Hôtel Drouot, 1993; gift of the Curatorial Circle to The Living Index, 2021.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1549887534-1541e9326642?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Color Field", "Concrete Art", "Serialism"],
+      "aspectRatio": 0.73,
+      "catalogNumber": "CAT-SRL-091",
+      "department": "Department of Prints & Ephemera",
+      "rightsStatement": "Estate of the Artist / Index Reproduction Permit",
+      "location": "Folio Binder Delta"
+    },
+    {
+      "id": "IDX-1965-005",
+      "title": "Monolith in Repose: Density Analysis",
+      "date": "1965",
+      "medium": "Cast patinated bronze with cold-rolled steel base",
+      "dimensions": "48.0 × 24.0 × 22.5 cm",
+      "provenanceText": "Commissioned for the Olivetti Executive Pavilion, Ivrea; preserved in corporate archive until 1982; Fondazione Nuove Forme, Turin; acquired through reciprocal exchange, 2017.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Sculpture", "Brutalism", "Tectonic"],
+      "aspectRatio": 1.25,
+      "catalogNumber": "CAT-SCU-014",
+      "department": "Three-Dimensional Objects & Casts",
+      "rightsStatement": "Institutional Research Loan",
+      "location": "Gallery Plinth B"
+    },
+    {
+      "id": "IDX-1972-006",
+      "title": "Cartography of Silence (Variant IV)",
+      "date": "1972",
+      "medium": "Handmade washi paper, sumi ink, and burnished silver leaf",
+      "dimensions": "180.0 × 90.0 cm",
+      "provenanceText": "Created during the artist's residency in Kyoto; exhibited at Tokyo Metropolitan Art Museum, 1973; collection of T. Nakamura; acquired by The Living Index in 2023.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Mono-ha", "Minimalism", "Materiality"],
+      "aspectRatio": 0.50,
+      "catalogNumber": "CAT-MNH-007",
+      "department": "Asian Avant-Garde & Material Studies",
+      "rightsStatement": "Permanent Collection",
+      "location": "Scroll Cabinet 1"
+    },
+    {
+      "id": "IDX-1984-007",
+      "title": "Chromatic Lattice with Micro-Interference",
+      "date": "1984",
+      "medium": "Acrylic and vinyl emulsion on hardboard",
+      "dimensions": "100.0 × 100.0 cm",
+      "provenanceText": "Exhibited at Salon des Réalités Nouvelles, Paris; collection of Pierre & Marthe Garnier; acquired through public auction, London, 2004.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Op Art", "Geometric Abstraction", "Kinetic"],
+      "aspectRatio": 1.0,
+      "catalogNumber": "CAT-OPT-033",
+      "department": "Perceptual & Kinetic Experiments",
+      "rightsStatement": "Scholarly Research Archival Record",
+      "location": "Gallery Wall 3"
+    },
+    {
+      "id": "IDX-1996-008",
+      "title": "Tectonic Palimpsest (Industrial Fragment)",
+      "date": "1996",
+      "medium": "Reclaimed oxidized copper, beeswax, and linen twine",
+      "dimensions": "65.0 × 52.0 × 8.0 cm",
+      "provenanceText": "Studio of the artist, Glasgow; exhibited at Fruitmarket Gallery, Edinburgh, 1997; private collection, Berlin; donated in memory of Dr. Alistair MacLeod, 2022.",
+      "highResImageUrl": "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?q=80&w=2400&auto=format&fit=crop",
+      "tags": ["Assemblage", "Brutalism", "Arte Povera"],
+      "aspectRatio": 0.80,
+      "catalogNumber": "CAT-ASM-056",
+      "department": "Contemporary Material Investigations",
+      "rightsStatement": "Public Domain Registry",
+      "location": "Archival Case 12"
+    }
+  ]
+}
