@@ -54,13 +54,11 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
     return Array.from(set).sort((a, b) => a - b);
   }, [items]);
 
-  const isBrutalist = aestheticType === "brutalist-technical";
-
   return (
     <div
-      aria-label="Chronological Axis"
+      aria-label="Chronological Folio"
       className={cn(
-        "py-6 px-8 border border-[var(--color-border)] bg-[var(--color-surface)]/40 transition-colors mb-16",
+        "py-6 px-8 border border-[var(--color-border)] bg-[var(--color-surface)]/30 transition-colors mb-16",
         className
       )}
     >
@@ -68,13 +66,13 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-4 mb-6 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.2em] uppercase text-[var(--color-text-secondary)]">
         <div>
           <span className="font-semibold text-[var(--color-text-primary)]">
-            Chronological Axis
+            Chronological Folio
           </span>
           <span className="opacity-30 mx-2">/</span>
           <span>{bounds.minYear} — {bounds.maxYear}</span>
           {selectedYear && (
             <span className="text-[var(--color-accent)] font-semibold ml-3">
-              — {selectedYear}
+              — Year {selectedYear}
             </span>
           )}
         </div>
@@ -84,7 +82,7 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
             onClick={() => onSelectYear(null)}
             className="text-[11px] text-[var(--color-accent)] hover:underline uppercase self-start sm:self-auto"
           >
-            Reset (Show All)
+            Reset (Show All {items.length})
           </button>
         )}
       </div>
@@ -100,7 +98,7 @@ export const TimelineController: React.FC<TimelineControllerProps> = ({
               : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
           )}
         >
-          All Decades
+          All Eras
         </button>
 
         {eras.map((era) => {

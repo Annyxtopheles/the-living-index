@@ -18,11 +18,11 @@
     "palette": {
       "backgroundColor": "#FAF8F5",
       "surfaceColor": "#F3EFE8",
-      "textPrimary": "#181513",
-      "textSecondary": "#6E675F",
-      "accentLineColor": "#382218",
+      "textPrimary": "#151210",
+      "textSecondary": "#6A635B",
+      "accentLineColor": "#2B1A12",
       "borderColor": "#E7E1D7",
-      "specimenBgColor": "#11100F"
+      "specimenBgColor": "#0E0D0C"
     }
   },
   "items": [

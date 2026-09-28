@@ -1,22 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-bg: #FAF8F5; /* Luminous warm ivory / archival rag */
-  --color-surface: #F3EFE8;
-  --color-text-primary: #181513; /* Carbon bone-black */
-  --color-text-secondary: #6E675F; /* Warm graphite */
-  --color-accent: #382218; /* Deep bitter chocolate / raw umber */
-  --color-border: #E7E1D7; /* Fine parchment hairline */
-  --color-specimen-bg: #11100F;
+  --color-bg: #FAF8F5; /* Warm luminous ivory / archival rag paper */
+  --color-surface: #F3EFE8; /* Soft vellum */
+  --color-text-primary: #151210; /* Archival bone-black / carbon ink */
+  --color-text-secondary: #6A635B; /* Warm graphite */
+  --color-accent: #2B1A12; /* Deep bitter chocolate / iron gall umber */
+  --color-border: #E7E1D7; /* Delicate parchment hairline */
+  --color-specimen-bg: #0E0D0C; /* Optical gallery blackout */
   --font-heading: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Newsreader', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* Procedural tactile paper grain texture across the canvas */
 body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
@@ -24,6 +25,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* Subtle, tactile paper tooth overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 ::selection {
@@ -33,13 +50,27 @@ body {
 
 h1, h2, h3, .font-heading {
   font-family: var(--font-heading);
+  text-wrap: balance;
+}
+
+p, blockquote, .font-body {
+  font-family: var(--font-body);
+  text-wrap: pretty;
 }
 
 code, kbd, samp, pre, .font-mono {
   font-family: var(--font-mono);
+  font-feature-settings: "zero" 1;
 }
 
-/* Authentic gallery minimal scrollbar */
+/* Archival passe-partout shadow and framing */
+.archival-mat {
+  background-color: #F6F3EC;
+  border: 1px solid rgba(43, 26, 18, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 20px 40px -15px rgba(43, 26, 18, 0.04);
+}
+
+/* Discreet gallery scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

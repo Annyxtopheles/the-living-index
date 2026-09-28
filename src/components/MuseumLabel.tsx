@@ -35,7 +35,7 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         )}
 
         {/* Accession Header */}
-        <div className="flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] text-[#8E8A82] uppercase mb-4">
+        <div className="flex items-center gap-2 text-[11px] font-mono tracking-[0.22em] text-[#8E8A82] uppercase mb-4">
           <span>{item.id}</span>
           <span className="opacity-40">/</span>
           <span>{item.date}</span>
@@ -66,14 +66,14 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
           <p className="text-white/90 italic">{item.medium}</p>
           <p className="font-mono text-[11px] opacity-75">{item.dimensions}</p>
           {item.location && (
-            <p className="text-[11px] opacity-60 font-mono">Location: {item.location}</p>
+            <p className="text-[11px] opacity-60 font-mono">Archive Location: {item.location}</p>
           )}
         </div>
 
         {/* Provenance Trail */}
         {item.provenanceText && (
           <div className="pt-6 border-t border-white/10">
-            <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBB5A1] mb-2 font-medium">
+            <span className="block text-[10px] font-mono uppercase tracking-[0.22em] text-[#CBB5A1] mb-2 font-medium">
               Custodial History & Provenance
             </span>
             <p className="text-xs leading-relaxed text-[#BCB7AC] font-serif">
@@ -103,9 +103,9 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         <h3
           onClick={onInspect}
           className={cn(
-            "text-xl font-normal leading-tight text-[var(--color-text-primary)] cursor-pointer hover:opacity-70 transition-opacity",
+            "text-xl sm:text-2xl font-normal leading-tight text-[var(--color-text-primary)] cursor-pointer hover:opacity-75 transition-opacity",
             isEditorial
-              ? "font-serif italic"
+              ? "font-serif italic tracking-tight"
               : isBrutalist
               ? "font-mono font-bold uppercase text-base"
               : "font-sans font-medium"
@@ -113,20 +113,21 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         >
           {item.title}
         </h3>
-        <span className="text-xs font-mono text-[var(--color-text-secondary)] shrink-0">
+        <span className="text-xs font-mono text-[var(--color-text-secondary)] shrink-0 tracking-wider">
           {item.date}
         </span>
       </div>
 
       <p className="text-xs text-[var(--color-text-secondary)] font-serif italic mb-3">
-        {item.medium} <span className="opacity-40 not-italic">•</span> <span className="font-mono not-italic text-[11px]">{item.dimensions}</span>
+        {item.medium} <span className="opacity-40 not-italic mx-1">·</span> <span className="font-mono not-italic text-[11px]">{item.dimensions}</span>
       </p>
 
       <button
         onClick={onInspect}
-        className="text-[11px] font-mono tracking-[0.16em] uppercase text-[var(--color-accent)] opacity-80 hover:opacity-100 transition-opacity"
+        className="text-[11px] font-mono tracking-[0.18em] uppercase text-[var(--color-accent)] opacity-80 hover:opacity-100 transition-opacity flex items-center gap-1 group"
       >
-        Examine Specimen →
+        <span>Examine Specimen</span>
+        <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
       </button>
     </div>
   );

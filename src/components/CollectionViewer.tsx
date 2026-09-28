@@ -7,6 +7,7 @@ import { GalleryHeader } from "./GalleryHeader";
 import { MuseumLabel } from "./MuseumLabel";
 import { SpecimenLightbox } from "./SpecimenLightbox";
 import { TimelineController } from "./TimelineController";
+import { Colophon } from "./Colophon";
 import { extractYear } from "@/lib/dateUtils";
 import { toRomanNumeral, cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -59,13 +60,16 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
   const isBrutalist = aestheticType === "brutalist-technical";
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)] transition-colors duration-700 pb-32">
+    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)] transition-colors duration-700 pb-28">
       <div className="max-w-[1360px] mx-auto px-6 sm:px-12 lg:px-16 pt-6">
-        {/* Editorial Masthead */}
+        {/* Editorial Exhibition Masthead */}
         <GalleryHeader metadata={collectionMetadata} totalItems={items.length} />
 
-        {/* Curatorial Controls & Navigation — Minimal & Editorial */}
-        <nav aria-label="Curatorial Filters" className="flex flex-col lg:flex-row lg:items-baseline justify-between gap-6 pb-6 mb-16 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.18em] uppercase">
+        {/* Curatorial Controls & Navigation — Handcrafted Editorial Minimal */}
+        <nav
+          aria-label="Curatorial Navigation"
+          className="flex flex-col lg:flex-row lg:items-baseline justify-between gap-6 pb-6 mb-20 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.2em] uppercase"
+        >
           {/* Movement Taxonomy Links */}
           <div className="flex flex-wrap items-center gap-6 text-[var(--color-text-secondary)]">
             <button
@@ -77,7 +81,7 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
                   : "hover:text-[var(--color-text-primary)]"
               )}
             >
-              All Objects ({items.length})
+              All Plates ({items.length})
             </button>
             {allTags.map((tag) => {
               const isSelected = selectedTag === tag;
@@ -98,8 +102,8 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
             })}
           </div>
 
-          {/* Secondary Controls: Timeline, Search, View Mode */}
-          <div className="flex flex-wrap items-center gap-6">
+          {/* Secondary Controls: Chronology, Search, View Mode */}
+          <div className="flex flex-wrap items-center gap-8">
             <button
               onClick={() => setShowTimeline((prev) => !prev)}
               className={cn(
@@ -118,7 +122,7 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
               placeholder="Search index..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-transparent border-b border-[var(--color-border)] pb-0.5 text-xs font-mono text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)]/60 focus:outline-none focus:border-[var(--color-accent)] w-32 sm:w-40 transition-colors"
+              className="bg-transparent border-b border-[var(--color-border)] pb-0.5 text-xs font-mono text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)]/50 focus:outline-none focus:border-[var(--color-accent)] w-32 sm:w-40 transition-colors"
             />
 
             {/* View Mode Switcher */}
@@ -177,87 +181,144 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
             </button>
           </div>
         ) : viewMode === "gallery" ? (
-          /* Editorial Asymmetrical Gallery (Harriet-inspired authentic rhythm) */
-          <motion.div
-            layout
-            className={cn(
-              "grid gap-y-28 gap-x-16",
-              isBrutalist
-                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-[var(--color-border)] gap-0"
-                : "grid-cols-1 md:grid-cols-12"
-            )}
-          >
+          /* Editorial Asymmetrical Layout: Harriet-Inspired Rhythmic Pacing */
+          <div className="space-y-36">
             <AnimatePresence>
               {filteredItems.map((item, index) => {
-                // Editorial alternating layout spans
-                const colSpan = isBrutalist
-                  ? ""
-                  : index % 3 === 0
-                  ? "md:col-span-7"
-                  : index % 3 === 1
-                  ? "md:col-span-5 md:mt-24"
-                  : "md:col-span-6 md:-mt-8";
+                const isEven = index % 2 === 0;
+                const isLeadPiece = index === 0 && selectedTag === null && selectedYear === null && searchQuery === "";
 
+                // Lead Piece: Monumental Plate with Gutter Marginalia
+                if (isLeadPiece) {
+                  return (
+                    <motion.article
+                      layout
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6 }}
+                      key={item.id}
+                      className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pb-20 border-b border-[var(--color-border)]/60"
+                    >
+                      {/* Left: Monumental Uncropped Artwork */}
+                      <div className="lg:col-span-8">
+                        <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-[var(--color-border)]/60">
+                          <span className="text-sm font-serif italic text-[var(--color-accent)] font-normal">
+                            № {toRomanNumeral(index + 1)} · Acquisition Piece
+                          </span>
+                          <span className="text-[11px] font-mono tracking-[0.2em] text-[var(--color-text-secondary)] uppercase">
+                            {item.id}
+                          </span>
+                        </div>
+
+                        {/* Passe-Partout Archival Mat Framing */}
+                        <div
+                          onClick={() => setActiveSpecimen(item)}
+                          className="archival-mat p-4 sm:p-8 cursor-pointer group transition-all duration-700"
+                        >
+                          <div className="overflow-hidden flex items-center justify-center bg-black/[0.02]">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={item.highResImageUrl}
+                              alt={item.title}
+                              loading="eager"
+                              className="w-full max-h-[680px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02] select-none"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right: Curatorial Marginalia & Placard */}
+                      <div className="lg:col-span-4 lg:pt-8 space-y-8">
+                        <div className="w-10 h-[1.5px] bg-[var(--color-accent)] opacity-80" />
+
+                        <MuseumLabel
+                          item={item}
+                          variant="wall-pinned"
+                          onInspect={() => setActiveSpecimen(item)}
+                        />
+
+                        {/* Direct Curatorial Commentary in Margin */}
+                        <div className="pt-6 border-t border-[var(--color-border)]/70 space-y-3">
+                          <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
+                            Curatorial Marginalia
+                          </span>
+                          <p className="text-xs font-serif italic text-[var(--color-text-secondary)] leading-relaxed">
+                            {item.provenanceText.split(";")[0]}. Preserved under climate control in {item.location}.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.article>
+                  );
+                }
+
+                // Subsequent Plates: Alternating Asymmetrical Sequence
                 return (
                   <motion.article
                     layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.5 }}
                     key={item.id}
                     className={cn(
-                      "group relative flex flex-col justify-between",
-                      isBrutalist ? "border-r border-b border-[var(--color-border)] p-6" : colSpan
+                      "grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center",
+                      // Harriet-style alternate staggering
+                      isEven ? "" : "lg:flex-row-reverse"
                     )}
                   >
-                    {/* Specimen Numbering */}
-                    <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-[var(--color-border)]/60">
-                      <span className="text-sm font-serif italic text-[var(--color-accent)] font-normal">
-                        № {toRomanNumeral(index + 1)}
-                      </span>
-                      <span className="text-[11px] font-mono tracking-[0.2em] text-[var(--color-text-secondary)] uppercase">
-                        {item.id}
-                      </span>
+                    {/* Artwork Container with Archival Mount */}
+                    <div className={cn("lg:col-span-7", isEven ? "" : "lg:order-2")}>
+                      <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-[var(--color-border)]/60">
+                        <span className="text-sm font-serif italic text-[var(--color-accent)] font-normal">
+                          № {toRomanNumeral(index + 1)}
+                        </span>
+                        <span className="text-[11px] font-mono tracking-[0.2em] text-[var(--color-text-secondary)] uppercase">
+                          {item.id}
+                        </span>
+                      </div>
+
+                      <div
+                        onClick={() => setActiveSpecimen(item)}
+                        className="archival-mat p-4 sm:p-6 cursor-pointer group transition-all duration-700"
+                      >
+                        <div className="overflow-hidden flex items-center justify-center bg-black/[0.02]">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={item.highResImageUrl}
+                            alt={item.title}
+                            loading="lazy"
+                            className="w-full max-h-[540px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02] select-none"
+                          />
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Specimen Artwork Image */}
-                    <div
-                      onClick={() => setActiveSpecimen(item)}
-                      className="relative overflow-hidden cursor-pointer aspect-[4/3] bg-black/5 flex items-center justify-center group"
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.highResImageUrl}
-                        alt={item.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none"
+                    {/* Accompanying Label in Gutter */}
+                    <div className={cn("lg:col-span-5", isEven ? "lg:pl-6" : "lg:order-1 lg:pr-6")}>
+                      <MuseumLabel
+                        item={item}
+                        variant="wall-pinned"
+                        onInspect={() => setActiveSpecimen(item)}
                       />
                     </div>
-
-                    {/* Clean Museum Label */}
-                    <MuseumLabel
-                      item={item}
-                      variant="wall-pinned"
-                      onInspect={() => setActiveSpecimen(item)}
-                    />
                   </motion.article>
                 );
               })}
             </AnimatePresence>
-          </motion.div>
+          </div>
         ) : (
           /* Scholarly Archival Ledger */
-          <div className="w-full overflow-x-auto border-t border-b border-[var(--color-border)] my-8">
+          <div className="w-full overflow-x-auto border-t border-b border-[var(--color-border)] my-12">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-[var(--color-border)] text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
-                  <th className="py-4 pr-6">Accession</th>
+                <tr className="border-b border-[var(--color-border)] text-[10px] font-mono uppercase tracking-[0.22em] text-[var(--color-text-secondary)]">
+                  <th className="py-4 pr-6">Accession №</th>
                   <th className="py-4 pr-6">Title</th>
                   <th className="py-4 pr-6">Date</th>
                   <th className="py-4 pr-6">Medium</th>
                   <th className="py-4 pr-6">Dimensions</th>
-                  <th className="py-4">Action</th>
+                  <th className="py-4">Folio</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[var(--color-border)]/60 text-xs">
@@ -279,8 +340,8 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
                       {item.dimensions}
                     </td>
                     <td className="py-4">
-                      <span className="text-[10px] font-mono text-[var(--color-accent)] group-hover:underline uppercase tracking-[0.16em]">
-                        Examine →
+                      <span className="text-[10px] font-mono text-[var(--color-accent)] group-hover:underline uppercase tracking-[0.18em]">
+                        Inspect →
                       </span>
                     </td>
                   </tr>
@@ -289,9 +350,12 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
             </table>
           </div>
         )}
+
+        {/* Handcrafted Exhibition Colophon */}
+        <Colophon metadata={collectionMetadata} />
       </div>
 
-      {/* Museum Specimen Lightbox */}
+      {/* Optical Specimen Lightbox Micro-Viewer */}
       <SpecimenLightbox
         item={activeSpecimen}
         items={filteredItems}

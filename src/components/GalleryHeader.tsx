@@ -19,10 +19,11 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
   const isBrutalist = aestheticType === "brutalist-technical";
 
   return (
-    <header className="mb-20 pt-6 pb-12 border-b border-[var(--color-border)] transition-colors duration-500">
+    <header className="mb-24 pt-8 pb-14 border-b border-[var(--color-border)] transition-colors duration-500">
       {/* Top Ledger Masthead */}
-      <div className="flex items-center justify-between pb-8 mb-16 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.22em] uppercase text-[var(--color-text-secondary)]">
+      <div className="flex items-center justify-between pb-8 mb-16 border-b border-[var(--color-border)] text-xs font-mono tracking-[0.24em] uppercase text-[var(--color-text-secondary)]">
         <div className="flex items-center gap-3">
+          <span className="w-1.5 h-1.5 bg-[var(--color-accent)] inline-block" />
           <span className="font-semibold text-[var(--color-text-primary)]">
             CABINET DES ÉPHÉMÈRES
           </span>
@@ -37,19 +38,19 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
       <div className="space-y-8">
         {/* Subtle chocolate hairline accent */}
         {isEditorial && (
-          <div className="w-12 h-[1.5px] bg-[var(--color-accent)] mb-8 opacity-85" />
+          <div className="w-14 h-[1.5px] bg-[var(--color-accent)] mb-8 opacity-90" />
         )}
 
-        <div className="flex items-baseline gap-4 text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
+        <div className="flex items-baseline gap-4 text-xs font-mono uppercase tracking-[0.22em] text-[var(--color-text-secondary)]">
           <span className="text-[var(--color-accent)] font-semibold">Catalogue Raisonné</span>
           <span className="opacity-30">—</span>
-          <span>{totalItems} Objects Pinned</span>
+          <span>{totalItems} Master Specimens</span>
         </div>
 
         {/* High-Impact Avant-Garde Title */}
         <h1
           className={cn(
-            "text-5xl sm:text-7xl lg:text-8xl font-normal leading-[0.98] tracking-tight text-[var(--color-text-primary)] max-w-5xl",
+            "text-5xl sm:text-7xl lg:text-8xl font-normal leading-[0.96] tracking-tight text-[var(--color-text-primary)] max-w-5xl",
             isEditorial
               ? "font-serif tracking-tight"
               : isBrutalist
@@ -70,16 +71,16 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
             {metadata.curatorialStatement && (
               <button
                 onClick={() => setShowStatement(true)}
-                className="text-xs font-mono tracking-[0.18em] uppercase text-[var(--color-text-primary)] hover:text-[var(--color-accent)] pb-0.5 border-b border-[var(--color-accent)] transition-colors"
+                className="text-xs font-mono tracking-[0.2em] uppercase text-[var(--color-text-primary)] hover:text-[var(--color-accent)] pb-0.5 border-b border-[var(--color-accent)] transition-colors"
               >
-                Curatorial Note [ + ]
+                Curatorial Preface —
               </button>
             )}
           </div>
         </div>
       </div>
 
-      {/* Curatorial Note Modal */}
+      {/* Curatorial Preface Dialog */}
       {showStatement && (
         <div
           role="dialog"
@@ -89,13 +90,13 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
           <div className="relative max-w-xl w-full bg-[var(--color-bg)] border border-[var(--color-border)] p-10 sm:p-12 shadow-2xl">
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-[var(--color-border)]">
               <span className="text-xs font-mono tracking-[0.25em] uppercase text-[var(--color-accent)] font-semibold">
-                Curatorial Note
+                Curatorial Preface
               </span>
               <button
                 onClick={() => setShowStatement(false)}
                 className="text-xs font-mono uppercase tracking-widest text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
               >
-                Close [ × ]
+                Close ×
               </button>
             </div>
 
