@@ -26,11 +26,11 @@ export const Colophon: React.FC<ColophonProps> = ({ metadata, className }) => {
             Colophon & Archival Ledger
           </h4>
           <p className="text-sm font-serif italic text-[var(--color-text-secondary)] leading-relaxed max-w-sm">
-            {metadata.name} is published as an open-access curatorial record dedicated to the study of 20th-century avant-garde material culture.
+            {metadata.name} is an open-access curatorial registry dedicated to the study of form, shadow, psychological extremity, and the visceral lineage of modern art.
           </p>
           <div className="pt-2 text-xs font-mono text-[var(--color-text-secondary)]">
             <span className="block opacity-60 uppercase tracking-widest text-[10px] mb-1">Custodial Office</span>
-            <span>{metadata.institution || "Cabinet des Éphémères"}</span>
+            <span>{metadata.institution || "Atelier des Ombres"}</span>
           </div>
         </div>
 

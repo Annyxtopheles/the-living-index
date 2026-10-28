@@ -25,10 +25,10 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
         <div className="flex items-center gap-3">
           <span className="w-1.5 h-1.5 bg-[var(--color-accent)] inline-block" />
           <span className="font-semibold text-[var(--color-text-primary)]">
-            CABINET DES ÉPHÉMÈRES
+            ATELIER DES OMBRES
           </span>
           <span className="opacity-30">/</span>
-          <span className="opacity-70">{metadata.editionDate || "MMXXVI"}</span>
+          <span className="opacity-70">{metadata.editionDate || "FOLIO I"}</span>
         </div>
 
         <ThemeSwitcher />
@@ -42,9 +42,9 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
         )}
 
         <div className="flex items-baseline gap-4 text-xs font-mono uppercase tracking-[0.22em] text-[var(--color-text-secondary)]">
-          <span className="text-[var(--color-accent)] font-semibold">Catalogue Raisonné</span>
+          <span className="text-[var(--color-accent)] font-semibold">Folio I · The Visceral Line</span>
           <span className="opacity-30">—</span>
-          <span>{totalItems} Master Specimens</span>
+          <span>{totalItems} Masterworks Pinned</span>
         </div>
 
         {/* High-Impact Avant-Garde Title */}
@@ -58,7 +58,7 @@ export const GalleryHeader: React.FC<GalleryHeaderProps> = ({ metadata, totalIte
               : "font-sans font-semibold"
           )}
         >
-          Cabinet des Éphémères
+          Atelier des Ombres
         </h1>
 
         {/* Curatorial Subtext & Expandable Statement */}

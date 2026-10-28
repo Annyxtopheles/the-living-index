@@ -141,7 +141,7 @@ export const SpecimenLightbox: React.FC<SpecimenLightboxProps> = ({
 
   const copyChicagoCitation = () => {
     if (!item) return;
-    const citation = `"${item.title}," ${item.date}. ${item.medium}, ${item.dimensions}. Cabinet des Éphémères, Accession No. ${item.id}.`;
+    const citation = `"${item.title}," ${item.date}. ${item.medium}, ${item.dimensions}. Atelier des Ombres, Accession No. ${item.id}.`;
     navigator.clipboard.writeText(citation);
     setCopiedCitation(true);
     setTimeout(() => setCopiedCitation(false), 2400);
@@ -317,7 +317,7 @@ export const SpecimenLightbox: React.FC<SpecimenLightboxProps> = ({
               </button>
             </div>
             <p className="text-xs font-serif italic text-[#A6A198] leading-relaxed select-all bg-white/[0.03] p-3 border border-white/5">
-              &ldquo;{item.title},&rdquo; {item.date}. {item.medium}, {item.dimensions}. Cabinet des Éphémères, Accession No. {item.id}.
+              &ldquo;{item.title},&rdquo; {item.date}. {item.medium}, {item.dimensions}. Atelier des Ombres, Accession No. {item.id}.
             </p>
           </div>
 
