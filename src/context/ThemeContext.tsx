@@ -25,13 +25,13 @@ export const THEME_PRESETS: Record<AestheticType, ThemePreset> = {
       monoFont: "'JetBrains Mono', 'Courier New', monospace",
     },
     palette: {
-      backgroundColor: "#FAF8F5", // Luminous warm ivory / archival rag
-      surfaceColor: "#F3EFE8",
-      textPrimary: "#181513", // Carbon bone-black
-      textSecondary: "#6E675F", // Warm graphite
-      accentLineColor: "#382218", // Deep bitter chocolate / raw umber
-      borderColor: "#E7E1D7", // Fine parchment hairline
-      specimenBgColor: "#11100F",
+      backgroundColor: "#FAF7F2", // Luminous warm aged ivory / archival rag
+      surfaceColor: "#F2EDE4",
+      textPrimary: "#141211", // Iron gall carbon black
+      textSecondary: "#68615A", // Warm graphite
+      accentLineColor: "#421515", // Deep dried oxblood / raw shadow umber
+      borderColor: "#E5DFD4", // Fine parchment hairline
+      specimenBgColor: "#0B0A09",
     },
     layoutClasses: {
       container: "max-w-[1360px] mx-auto px-6 sm:px-12 lg:px-20 py-16",

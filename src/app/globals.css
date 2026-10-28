@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #FAF8F5; /* Warm luminous ivory / archival rag paper */
-  --color-surface: #F3EFE8; /* Soft vellum */
-  --color-text-primary: #151210; /* Archival bone-black / carbon ink */
-  --color-text-secondary: #6A635B; /* Warm graphite */
-  --color-accent: #2B1A12; /* Deep bitter chocolate / iron gall umber */
-  --color-border: #E7E1D7; /* Delicate parchment hairline */
-  --color-specimen-bg: #0E0D0C; /* Optical gallery blackout */
+  --color-bg: #FAF7F2; /* Warm aged bone ivory / archival rag paper */
+  --color-surface: #F2EDE4; /* Soft vellum */
+  --color-text-primary: #141211; /* Archival bone-black / iron gall carbon ink */
+  --color-text-secondary: #68615A; /* Warm graphite */
+  --color-accent: #421515; /* Deep dried oxblood / raw shadow umber */
+  --color-border: #E5DFD4; /* Delicate parchment hairline */
+  --color-specimen-bg: #0B0A09; /* Optical gallery blackout */
   --font-heading: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Newsreader', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
