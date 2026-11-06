@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface MuseumLabelProps {
   item: ArchivalItem;
   className?: string;
-  variant?: "wall-pinned" | "lightbox";
+  variant?: "wall-pinned" | "dossier" | "lightbox";
   onInspect?: () => void;
 }
 
@@ -20,95 +20,35 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
 }) => {
   const { aestheticType } = useTheme();
 
-  const isBrutalist = aestheticType === "brutalist-technical";
   const isEditorial = aestheticType === "editorial-serif";
 
-  // Lightbox: Scholarly Museum Dossier
-  if (variant === "lightbox") {
-    return (
-      <article
-        aria-label={`Curatorial dossier for ${item.title}`}
-        className={cn("relative select-text max-w-md", className)}
-      >
-        {isEditorial && (
-          <div className="w-12 h-[1.5px] bg-[#CBB5A1] mb-8" />
-        )}
+  const getConditionBadgeStyle = (grade: string) => {
+    if (grade.includes("Grade I")) {
+      return "border-emerald-700/40 text-emerald-800 bg-emerald-500/10";
+    }
+    if (grade.includes("Grade II")) {
+      return "border-amber-700/40 text-amber-800 bg-amber-500/10";
+    }
+    return "border-rose-700/40 text-rose-800 bg-rose-500/10";
+  };
 
-        {/* Accession Header */}
-        <div className="flex items-center gap-2 text-[11px] font-mono tracking-[0.22em] text-[#8E8A82] uppercase mb-4">
-          <span>{item.id}</span>
-          <span className="opacity-40">/</span>
-          <span>{item.date}</span>
-          {item.catalogNumber && (
-            <>
-              <span className="opacity-40">/</span>
-              <span>{item.catalogNumber}</span>
-            </>
-          )}
-        </div>
-
-        {/* Title */}
-        <h2
-          className={cn(
-            "text-2xl sm:text-3xl leading-snug text-[#F5F2EB] mb-4",
-            isEditorial
-              ? "font-serif italic font-normal tracking-tight"
-              : isBrutalist
-              ? "font-mono font-bold uppercase text-lg"
-              : "font-sans font-semibold"
-          )}
-        >
-          {item.title}
-        </h2>
-
-        {/* Physical Specimen Details */}
-        <div className="space-y-1.5 text-xs text-[#BCB7AC] leading-relaxed mb-6 font-serif">
-          <p className="text-white/90 italic">{item.medium}</p>
-          <p className="font-mono text-[11px] opacity-75">{item.dimensions}</p>
-          {item.location && (
-            <p className="text-[11px] opacity-60 font-mono">Archive Location: {item.location}</p>
-          )}
-        </div>
-
-        {/* Provenance Trail */}
-        {item.provenanceText && (
-          <div className="pt-6 border-t border-white/10">
-            <span className="block text-[10px] font-mono uppercase tracking-[0.22em] text-[#CBB5A1] mb-2 font-medium">
-              Custodial History & Provenance
-            </span>
-            <p className="text-xs leading-relaxed text-[#BCB7AC] font-serif">
-              {item.provenanceText}
-            </p>
-          </div>
-        )}
-
-        {/* Rights & Department */}
-        <div className="mt-8 pt-4 border-t border-white/10 flex flex-wrap items-center gap-2 text-[10px] font-mono text-[#8C887F]">
-          {item.department && <span>{item.department}</span>}
-          {item.rightsStatement && (
-            <>
-              <span>•</span>
-              <span>{item.rightsStatement}</span>
-            </>
-          )}
-        </div>
-      </article>
-    );
-  }
-
-  // Gallery Wall: Minimal, authentic, zero AI slop
+  // Gallery Wall Plate Label: Authentic, scholarly, high craft
   return (
-    <div className={cn("relative select-text pt-4", className)}>
-      <div className="flex items-baseline justify-between gap-4 mb-1">
+    <div className={cn("relative select-text pt-2", className)}>
+      {/* Category & Condition Metadata */}
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2 border-b border-[var(--color-border)] text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
+        <span className="font-semibold text-[var(--color-accent)]">{item.category}</span>
+        <span className={cn("px-2 py-0.5 text-[9px] font-semibold border", getConditionBadgeStyle(item.conditionGrade))}>
+          {item.conditionGrade}
+        </span>
+      </div>
+
+      <div className="flex items-baseline justify-between gap-4 mb-2">
         <h3
           onClick={onInspect}
           className={cn(
-            "text-xl sm:text-2xl font-normal leading-tight text-[var(--color-text-primary)] cursor-pointer hover:opacity-75 transition-opacity",
-            isEditorial
-              ? "font-serif italic tracking-tight"
-              : isBrutalist
-              ? "font-mono font-bold uppercase text-base"
-              : "font-sans font-medium"
+            "text-2xl sm:text-3xl font-normal leading-snug text-[var(--color-text-primary)] cursor-pointer hover:text-[var(--color-accent)] transition-colors",
+            isEditorial ? "font-serif italic tracking-tight" : "font-mono font-bold uppercase text-lg"
           )}
         >
           {item.title}
@@ -118,16 +58,25 @@ export const MuseumLabel: React.FC<MuseumLabelProps> = ({
         </span>
       </div>
 
-      <p className="text-xs text-[var(--color-text-secondary)] font-serif italic mb-3">
-        {item.medium} <span className="opacity-40 not-italic mx-1">·</span> <span className="font-mono not-italic text-[11px]">{item.dimensions}</span>
+      {/* Substrate & Dimensions */}
+      <p className="text-xs text-[var(--color-text-secondary)] font-serif italic mb-3 leading-relaxed">
+        {item.medium}
       </p>
 
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] font-mono text-[var(--color-text-secondary)] mb-4">
+        <span><strong className="text-[var(--color-text-primary)] font-medium">Dim:</strong> {item.dimensions}</span>
+        <span className="opacity-30">/</span>
+        <span><strong className="text-[var(--color-text-primary)] font-medium">Vault:</strong> {item.storageMicroclimate.vaultDesignation.split("·")[0].trim()}</span>
+      </div>
+
+      {/* Curatorial Action */}
       <button
+        type="button"
         onClick={onInspect}
-        className="text-[11px] font-mono tracking-[0.18em] uppercase text-[var(--color-accent)] opacity-80 hover:opacity-100 transition-opacity flex items-center gap-1 group"
+        className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase text-[var(--color-accent)] hover:opacity-100 transition-opacity pb-0.5 border-b border-[var(--color-accent)] group"
       >
-        <span>Examine Specimen</span>
-        <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+        <span>Access Specimen Dossier</span>
+        <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
       </button>
     </div>
   );
