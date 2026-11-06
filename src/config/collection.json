@@ -1,150 +1,542 @@
 {
   "collectionMetadata": {
-    "name": "Atelier des Ombres",
-    "curator": "Cabinet Curatorial Direction",
-    "institution": "Atelier des Ombres · Curatorial Registry",
-    "description": "A curated registry of form, shadow, and psychological intensity. Catalogued directly under an open scholarly ledger, inaugurating with Folio I: The Visceral Line.",
-    "curatorialStatement": "Atelier des Ombres was founded to isolate and examine works born out of psychological extremity, existential terror, and tactile darkness. Folio I traces the direct spiritual lineage between Francisco Goya’s secluded madness on the plaster walls of the Quinta del Sordo and Francis Bacon’s visceral, screaming post-war figures trapped in optical voids.",
+    "name": "THE LIVING INDEX",
+    "curator": "Curatorial Trust & Antiquarian Registry",
+    "institution": "The Living Index Archival Trust",
+    "description": "A museum-grade digital collection framework for independent collectors, antiquarians, and private archivists. Maintained under strict conservational standards and dual-surface ledger telemetry.",
+    "curatorialStatement": "The Living Index establishes an empirical custody protocol for physical heritage. Every specimen catalogued herein is bound to its accession code, calibrated microclimate tolerances, and verifiable provenance chain. We reject digital ephemeralization in favor of dense scholarly accountability.",
     "aestheticType": "editorial-serif",
-    "editionDate": "Folio I · MMXXVI",
-    "githubRepoUrl": "https://github.com/Annyxtopheles/the-living-index"
+    "editionDate": "Accession Register · MMXXVI",
+    "githubRepoUrl": "https://github.com/Annyxtopheles/the-living-index",
+    "environmentalTelemetry": {
+      "vaultDesignation": "Vault Complex C-4",
+      "relativeHumidity": "48.2% RH",
+      "temperature": "19.4°C",
+      "atmosphere": "Nitrogen 99.1%",
+      "lastInspection": "2026-11-01",
+      "sensorHealth": "OPTIMAL"
+    }
   },
   "themingTokens": {
     "typography": {
-      "headerFont": "Cinzel, Cormorant Garamond, Georgia, serif",
+      "headerFont": "Newsreader, Georgia, 'Times New Roman', serif",
       "bodyFont": "Newsreader, Georgia, serif",
-      "monoFont": "JetBrains Mono, Courier New, monospace"
+      "monoFont": "JetBrains Mono, 'Geist Mono', Consolas, monospace"
     },
     "palette": {
-      "backgroundColor": "#FAF7F2",
-      "surfaceColor": "#F2EDE4",
+      "backgroundColor": "#FAF8F5",
+      "surfaceColor": "#F2EFE9",
       "textPrimary": "#141211",
-      "textSecondary": "#68615A",
-      "accentLineColor": "#421515",
-      "borderColor": "#E5DFD4",
-      "specimenBgColor": "#0B0A09"
+      "textSecondary": "#68625B",
+      "accentLineColor": "#3E1414",
+      "borderColor": "rgba(20, 18, 17, 0.09)",
+      "specimenBgColor": "#0E0D0C"
     }
   },
   "items": [
     {
-      "id": "ADO-1819-001",
-      "title": "Saturn Devouring His Son (Saturno devorando a su hijo)",
-      "date": "1819–1823",
-      "medium": "Mixed technique transferred from plaster wall to canvas",
-      "dimensions": "143.5 × 81.4 cm",
-      "provenanceText": "Painted directly onto the dining room walls of the Quinta del Sordo, Madrid; transferred to canvas by Salvador Martínez Cubells in 1874 under the direction of Baron Émile d'Erlanger; presented at the Paris Exposition Universelle of 1878; donated to the Museo del Prado, Madrid, 1881.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg",
-      "tags": ["Francisco Goya", "Pinturas Negras", "The Visceral Line"],
-      "aspectRatio": 0.57,
-      "catalogNumber": "PRD-GOY-763",
-      "department": "Colección de Pinturas Negras",
-      "rightsStatement": "Public Domain Mark 1.0 (Scholarly Non-Commercial Registry)",
-      "location": "Museo del Prado, Madrid (Gallery 067)"
+      "id": "TLI-1782-012",
+      "accessionCode": "TLI-1782-012",
+      "title": "Breguet No. 160 Grand Complication ('Marie-Antoinette')",
+      "date": "1782–1827",
+      "acquisitionYear": 1782,
+      "category": "Horological Complications",
+      "medium": "18k gold, sapphire crystal, platinum and blued-steel train, 82 natural rubies",
+      "mediumSubstrate": "18-karat yellow gold case, rock crystal dials, blued-steel screws, natural ruby endstones",
+      "dimensions": "64.0 mm diameter × 26.5 mm thickness",
+      "conditionGrade": "Grade I (Mint)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault C-4 · Horology Cell 1",
+        "targetRH": "45.0% ± 2% RH",
+        "temperatureRange": "19.0°C ± 0.5°C",
+        "atmosphericEnvironment": "Nitrogen-purged anaerobic casing, zero ambient sulfides",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Commissioned in 1783 for Queen Marie-Antoinette by an officer of the Garde du Corps; completed in 1827 by Abraham-Louis Breguet's son Antoine-Louis Breguet; collection of Sir David Lionel Salomons, 1925; L.A. Mayer Museum for Islamic Art, Jerusalem; accessioned to Living Index Trust custody 2012.",
+      "provenanceChain": [
+        {
+          "date": "1783",
+          "holder": "Officer of the French Garde du Corps (Anonymous)",
+          "location": "Versailles / Paris, France",
+          "transferType": "Commission",
+          "verified": true,
+          "notes": "Commission stipulated every complication known to horology with no time or cost ceiling."
+        },
+        {
+          "date": "1827",
+          "holder": "Ateliers Breguet (Antoine-Louis Breguet)",
+          "location": "Quai de l'Horloge, Paris",
+          "transferType": "Completion",
+          "verified": true,
+          "notes": "Completed 34 years after the death of Marie-Antoinette and 4 years after Abraham-Louis Breguet's death."
+        },
+        {
+          "date": "1925",
+          "holder": "Sir David Lionel Salomons",
+          "location": "Broomhill, Tunbridge Wells, UK",
+          "transferType": "Private Acquisition",
+          "verified": true,
+          "notes": "Recorded in Salomons Breguet Monograph as masterwork No. 160."
+        },
+        {
+          "date": "2012",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault Complex C-4",
+          "transferType": "Custodial Registry",
+          "verified": true,
+          "notes": "Complete mechanical disassembly and stabilization documented in conservatorial folio."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": true,
+        "uvFluorescence": false,
+        "xrfAnalysis": "Gold 75.2% Au, 16.1% Ag, 8.7% Cu alloy profile",
+        "radiographyScan": true
+      },
+      "curatorialNotes": "Regarded as the pinnacle of 18th-century horological engineering. Features perpetual calendar, equation of time, jumping hours, minute repeater, bimetallic thermometer, and independent central seconds. Escapement operates on natural ruby cylinder with shock-absorbing pare-chute suspension.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/MarieAntoinetteWatch.jpg",
+      "tags": ["Horology", "Complications", "Breguet", "18th Century", "Gold"],
+      "aspectRatio": 0.75,
+      "catalogNumber": "HOR-BRG-160",
+      "department": "Department of Precision Mechanics",
+      "rightsStatement": "Wikimedia Commons / Public Domain Mark 1.0",
+      "location": "Vault Complex C-4 · Bay 12",
+      "parsedYear": 1782
     },
     {
-      "id": "ADO-1953-002",
-      "title": "Study after Velázquez's Portrait of Pope Innocent X",
-      "date": "1953",
-      "medium": "Oil on unprimed Belgian canvas",
-      "dimensions": "153.0 × 118.0 cm",
-      "provenanceText": "Studio of the artist, London; Hanover Gallery, London; purchased by the Des Moines Art Center with funds from the Coffin Fine Arts Trust, Nathan Emory Coffin Collection, 1959.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/en/5/56/Study_after_Velazquez%27s_Portrait_of_Pope_Innocent_X.jpg",
-      "tags": ["Francis Bacon", "Screaming Popes", "The Visceral Line"],
-      "aspectRatio": 0.77,
-      "catalogNumber": "BAC-POP-053",
-      "department": "Department of Post-War Psychological Expression",
-      "rightsStatement": "Estate of Francis Bacon / Fair Use Scholarly Registry",
-      "location": "Des Moines Art Center, Iowa (Coffin Collection)"
-    },
-    {
-      "id": "ADO-1821-003",
-      "title": "Witches' Sabbath (The Great He-Goat / El aquelarre)",
-      "date": "1821–1823",
-      "medium": "Mixed technique transferred from plaster wall to canvas",
-      "dimensions": "140.5 × 435.7 cm",
-      "provenanceText": "Painted directly onto the ground-floor salon of the Quinta del Sordo, Madrid; transferred to canvas in 1874 by Salvador Martínez Cubells; exhibited in Paris, 1878; bequest of Baron d'Erlanger to the Spanish State.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Francisco_de_Goya_y_Lucientes_-_Witches%27_Sabbath_%28The_Great_He-Goat%29.jpg",
-      "tags": ["Francisco Goya", "Pinturas Negras", "The Visceral Line"],
-      "aspectRatio": 3.10,
-      "catalogNumber": "PRD-GOY-761",
-      "department": "Colección de Pinturas Negras",
-      "rightsStatement": "Public Domain Mark 1.0",
-      "location": "Museo del Prado, Madrid (Gallery 067)"
-    },
-    {
-      "id": "ADO-1949-004",
-      "title": "Head VI",
-      "date": "1949",
-      "medium": "Oil on canvas",
-      "dimensions": "93.2 × 76.5 cm",
-      "provenanceText": "Painted in London, autumn 1949; Hanover Gallery, London (Bacon's historic breakthrough exhibition); acquired by the Arts Council of Great Britain, 1950.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6f/Head_VI_%281949%29.JPG",
-      "tags": ["Francis Bacon", "Screaming Popes", "The Visceral Line"],
+      "id": "TLI-1759-004",
+      "accessionCode": "TLI-1759-004",
+      "title": "HMS Beagle Marine Chronometer (Thomas Earnshaw No. 509)",
+      "date": "c. 1795–1805",
+      "acquisitionYear": 1831,
+      "category": "Horological Complications",
+      "medium": "Lacquered brass, spring detent escapement, compensated bimetallic balance, silvered dial",
+      "mediumSubstrate": "Cast gunmetal brass, hardened blued-steel helical balance spring, English oak gimbal box",
+      "dimensions": "125 mm diameter × 140 mm gimbal height",
+      "conditionGrade": "Grade II (Stabilized)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault C-4 · Horology Cell 2",
+        "targetRH": "46.0% ± 2% RH",
+        "temperatureRange": "19.5°C ± 0.5°C",
+        "atmosphericEnvironment": "Filtered inert nitrogen micro-chamber, silica-gel desiccated buffer",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Manufactured by Thomas Earnshaw, 119 High Holborn, London; purchased by the British Board of Longitude; assigned to Admiralty Hydrographic Department; embarked on HMS Beagle second surveying voyage (1831–1836) under Captain Robert FitzRoy carrying naturalist Charles Darwin; British Museum transfer.",
+      "provenanceChain": [
+        {
+          "date": "c. 1800",
+          "holder": "Thomas Earnshaw Ateliers",
+          "location": "High Holborn, London, UK",
+          "transferType": "Manufacture",
+          "verified": true,
+          "notes": "Spring detent escapement numbered 509 engraved on backplate."
+        },
+        {
+          "date": "1831",
+          "holder": "Admiralty Hydrographic Office (HMS Beagle)",
+          "location": "Devonport, Plymouth, UK",
+          "transferType": "Naval Commission",
+          "verified": true,
+          "notes": "One of 22 marine chronometers carried on the Beagle to establish a global chain of longitude meridians."
+        },
+        {
+          "date": "1958",
+          "holder": "The British Museum",
+          "location": "Bloomsbury, London, UK",
+          "transferType": "Institutional Transfer",
+          "verified": true,
+          "notes": "Transferred under Admiralty Scientific Instrument Relinquishment Act."
+        },
+        {
+          "date": "2020",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault Complex C-4",
+          "transferType": "Scholarly Custody Registry",
+          "verified": true,
+          "notes": "Escapement stabilized without abrasive polishing; original oil residues preserved for spectrographic analysis."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": false,
+        "uvFluorescence": true,
+        "xrfAnalysis": "Brass alloy: 68.4% Cu, 31.2% Zn, trace Pb 0.4%",
+        "radiographyScan": true
+      },
+      "curatorialNotes": "Earnshaw's spring detent revolutionized navigational precision. During the five-year circumnavigation of HMS Beagle, No. 509 maintained a mean daily rate variance under 0.18 seconds, anchoring the longitude calculations that underpinned Darwin's geographic observations.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/British_Museum_Marine_Chronometer.jpg",
+      "tags": ["Horology", "Navigation", "HMS Beagle", "Darwin", "Admiralty"],
       "aspectRatio": 0.82,
-      "catalogNumber": "BAC-HED-006",
-      "department": "Arts Council Collection",
-      "rightsStatement": "Estate of Francis Bacon / Scholarly Archival Reference",
-      "location": "Hayward Gallery / Southbank Centre, London"
+      "catalogNumber": "HOR-EAR-509",
+      "department": "Department of Precision Mechanics",
+      "rightsStatement": "British Museum / Wikimedia Commons Public Domain",
+      "location": "Vault Complex C-4 · Bay 14",
+      "parsedYear": 1831
     },
     {
-      "id": "ADO-1820-005",
-      "title": "Fight with Cudgels (Duelo a garrotazos)",
-      "date": "1820–1823",
-      "medium": "Mixed technique transferred from plaster wall to canvas",
-      "dimensions": "123.0 × 266.0 cm",
-      "provenanceText": "Upper floor mural of the Quinta del Sordo; depicting two combatants trapped knee-deep in soil bludgeoning each other; transferred to canvas, 1874; gifted to the Museo del Prado.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Francisco_de_Goya_y_Lucientes_-_Duelo_a_garrotazos.jpg",
-      "tags": ["Francisco Goya", "Pinturas Negras", "The Visceral Line"],
-      "aspectRatio": 2.16,
-      "catalogNumber": "PRD-GOY-758",
-      "department": "Colección de Pinturas Negras",
-      "rightsStatement": "Public Domain Mark 1.0",
-      "location": "Museo del Prado, Madrid (Gallery 067)"
+      "id": "TLI-1613-088",
+      "accessionCode": "TLI-1613-088",
+      "title": "Besler: Hortus Eystettensis (Prince-Bishop's Eichstätt Florilegium)",
+      "date": "1613",
+      "acquisitionYear": 1613,
+      "category": "Rare Botanical Folios",
+      "medium": "Hand-colored copperplate engraving on handmade rag paper, pigskin binding",
+      "mediumSubstrate": "100% linen rag laid paper with Bishop's crest watermark, copperplate intaglio inks, gum arabic mineral pigments",
+      "dimensions": "57.0 × 45.5 cm (Imperial broadsheet folio)",
+      "conditionGrade": "Grade II (Stabilized)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault A-1 · Botanical Rare Folios",
+        "targetRH": "50.0% ± 2% RH",
+        "temperatureRange": "18.0°C ± 0.5°C",
+        "atmosphericEnvironment": "UV filtered zero-ozone atmosphere, archival deacidified tissue interleaves",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Commissioned by Prince-Bishop Johann Konrad von Gemmingen of Eichstätt, Bavaria; executed by apothecary-botanist Basilius Besler and team of Nuremberg engravers; Willibaldsburg Castle library; rescued during Thirty Years' War (1634); private Bavarian collection; acquired 2018.",
+      "provenanceChain": [
+        {
+          "date": "1613",
+          "holder": "Johann Konrad von Gemmingen, Prince-Bishop of Eichstätt",
+          "location": "Willibaldsburg Castle, Eichstätt, Bavaria",
+          "transferType": "Commission & Dedication",
+          "verified": true,
+          "notes": "Deluxe colored edition of 367 plates depicting 1,084 species cultivated in the eight episcopal terrace gardens."
+        },
+        {
+          "date": "1634",
+          "holder": "Abbey of Saint Walburg",
+          "location": "Eichstätt, Bavaria",
+          "transferType": "Wartime Evacuation",
+          "verified": true,
+          "notes": "Sheltered from Swedish sack of Willibaldsburg Castle during Thirty Years' War."
+        },
+        {
+          "date": "2018",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault A-1",
+          "transferType": "Consortium Acquisition",
+          "verified": true,
+          "notes": "Deacidified buffer applied to margins; pigskin tooling cleaned with anhydrous leather dressing."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": true,
+        "uvFluorescence": true,
+        "xrfAnalysis": "Pigment scan: Malachite green, Vermilion (HgS), Azurite blue, Orpiment (As2S3)",
+        "radiographyScan": false
+      },
+      "curatorialNotes": "The first great botanical work to break from medieval medicinal pharmacopoeia in favor of pure aesthetic and morphological representation. The folio represents the four seasons in garden horticulture, executed with uncompromising botanical veracity before the invention of modern Linnaean taxonomy.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Basilius_Besler%2C_Hortus_Eystettensis%2C_1613.jpg",
+      "tags": ["Botany", "Besler", "Florilegium", "Copperplate", "17th Century"],
+      "aspectRatio": 0.69,
+      "catalogNumber": "BOT-BES-001",
+      "department": "Botanical Rare Folios",
+      "rightsStatement": "Wikimedia Commons / Public Domain Mark 1.0",
+      "location": "Vault A-1 · Folio Drawer 03",
+      "parsedYear": 1613
     },
     {
-      "id": "ADO-1944-006",
-      "title": "Three Studies for Figures at the Base of a Crucifixion",
-      "date": "1944",
-      "medium": "Oil and pastel on Sundeala board (triptych)",
-      "dimensions": "94.0 × 73.7 cm (each panel)",
-      "provenanceText": "Completed in London during the Blitz; first exhibited at the Lefevre Gallery in April 1945; purchased by Eric Hall; presented to the Tate Gallery, London, 1953.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/en/1/11/Three_Studies_for_Figures_at_the_Base_of_a_Crucifixion.jpg",
-      "tags": ["Francis Bacon", "The Visceral Line"],
-      "aspectRatio": 2.35,
-      "catalogNumber": "BAC-TRP-001",
-      "department": "Modern & Contemporary British Art",
-      "rightsStatement": "Tate Collection / Fair Use Educational Record",
-      "location": "Tate Britain, London (Room 9)"
+      "id": "TLI-1805-019",
+      "accessionCode": "TLI-1805-019",
+      "title": "Pierre-Joseph Redouté: Les Liliacées (Dalmatian Iris, Plate 366)",
+      "date": "1805–1816",
+      "acquisitionYear": 1805,
+      "category": "Rare Botanical Folios",
+      "medium": "Stipple engraving printed in color and finished by hand with watercolor on wove paper",
+      "mediumSubstrate": "J. Whatman heavyweight wove rag paper, hand-ground organic watercolors, stipple intaglio plate impression",
+      "dimensions": "53.2 × 35.8 cm",
+      "conditionGrade": "Grade I (Mint)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault A-1 · Botanical Rare Folios",
+        "targetRH": "48.5% ± 2% RH",
+        "temperatureRange": "18.5°C ± 0.5°C",
+        "atmosphericEnvironment": "Encapsulated in Melinex 516 archival polyester sleeve, acid-free museum rag mat",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Patronage of Empress Joséphine Bonaparte at Château de Malmaison; botanical descriptions by Augustin Pyramus de Candolle; printed by Didot Jeune, Paris; collection of the Duke of Luynes, Château de Dampierre; acquired by private treaty 2019.",
+      "provenanceChain": [
+        {
+          "date": "1805",
+          "holder": "Empress Joséphine Bonaparte",
+          "location": "Château de Malmaison, Rueil-Malmaison, France",
+          "transferType": "Imperial Patronage",
+          "verified": true,
+          "notes": "Joséphine commissioned Redouté to record the rare bulbous monocotyledons assembled in her Malmaison greenhouses."
+        },
+        {
+          "date": "1888",
+          "holder": "Duc de Luynes",
+          "location": "Château de Dampierre, Yvelines, France",
+          "transferType": "Estate Inheritance",
+          "verified": true,
+          "notes": "Maintained in dark folio cabinet with minimal daylight exposure, ensuring extraordinary pigment saturation."
+        },
+        {
+          "date": "2019",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault A-1",
+          "transferType": "Private Treaty Acquisition",
+          "verified": true,
+          "notes": "Verified by spectral pigment analysis; complete absence of foxing or paper acidification."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": false,
+        "uvFluorescence": true,
+        "xrfAnalysis": "Pigment scan: Natural indigo and Prussian blue blend; gum tragacanth glaze confirmed",
+        "radiographyScan": false
+      },
+      "curatorialNotes": "Redouté perfected stipple engraving—using tiny copper points instead of lines—enabling delicate tonal gradations and botanical transparency. Plate 366 (Iris pallida) captures the waxy silver bloom on the lanceolate foliage and the velvety falls of the perianth with unmatched botanical fidelity.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/De_Gouy%2C_after_Pierre-_Joseph_Redout%C3%A9_-_Dalmatian_Iris_%28Iris_pallida%29%2C_plate_366%2C_vol._7_of_Pierre-Joseph_Redout%C3%A9%2C_%22Les_Liliac%C3%A9es%22%2C_Paris_18..._-_Google_Art_Project.jpg",
+      "tags": ["Botany", "Redouté", "Les Liliacées", "Joséphine Bonaparte", "Stipple Engraving"],
+      "aspectRatio": 0.67,
+      "catalogNumber": "BOT-RED-366",
+      "department": "Botanical Rare Folios",
+      "rightsStatement": "Google Art Project / Wikimedia Commons Public Domain",
+      "location": "Vault A-1 · Solander Box 07",
+      "parsedYear": 1805
     },
     {
-      "id": "ADO-1819-007",
-      "title": "The Dog (El perro / Perro semihundido)",
-      "date": "1819–1823",
-      "medium": "Mixed technique transferred from plaster wall to canvas",
-      "dimensions": "131.5 × 79.3 cm",
-      "provenanceText": "Painted on the upper floor of the Quinta del Sordo; a legendary contemplation of solitude depicting an animal lost in an austere ochre void; transferred to canvas, 1874; Museo del Prado.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Goya_Dog.jpg",
-      "tags": ["Francisco Goya", "Pinturas Negras", "The Visceral Line"],
-      "aspectRatio": 0.60,
-      "catalogNumber": "PRD-GOY-767",
-      "department": "Colección de Pinturas Negras",
-      "rightsStatement": "Public Domain Mark 1.0",
-      "location": "Museo del Prado, Madrid (Gallery 067)"
+      "id": "TLI-1967-031",
+      "accessionCode": "TLI-1967-031",
+      "title": "Seymchan Pallasite Meteorite (Polished Core Slice)",
+      "date": "Formed c. 4.56 Ga · Found 1967",
+      "acquisitionYear": 1967,
+      "category": "Mineral / Tectonic Specimens",
+      "medium": "Extraterrestrial olivine crystals suspended in nickel-iron kamacite/taenite matrix",
+      "mediumSubstrate": "Pallasite (Main Group PMG-anomalous), Kamacite (α-Fe,Ni), Taenite (γ-Fe,Ni), Schreibersite, Forsteritic Olivine",
+      "dimensions": "24.8 × 18.2 × 0.8 cm (Mass: 2,140 g)",
+      "conditionGrade": "Grade I (Mint)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault M-2 · Planetary Mineralogy",
+        "targetRH": "18.0% ± 2% RH (Desiccated)",
+        "temperatureRange": "20.0°C ± 1.0°C",
+        "atmosphericEnvironment": "Ultra-low moisture desiccator chamber, continuous nitrogen backfill to prevent chloride corrosion",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Discovered in June 1967 in the bed of the Hekandue River, Magadan District, Soviet Union, by geologist F. A. Mednikov; main mass deposited with Academy of Sciences of the USSR, Moscow; secondary pallasitic section cut and polished at Vernadsky Institute; accessioned 2016.",
+      "provenanceChain": [
+        {
+          "date": "1967",
+          "holder": "F. A. Mednikov / Soviet Geological Expedition",
+          "location": "Seymchan, Magadan Oblast, USSR",
+          "transferType": "Field Discovery",
+          "verified": true,
+          "notes": "Initial 272.3 kg mass discovered in dried riverbed; originally classified as octahedrite until silicate-bearing zones found."
+        },
+        {
+          "date": "1974",
+          "holder": "Vernadsky Institute of Geochemistry and Analytical Chemistry",
+          "location": "Moscow, USSR",
+          "transferType": "State Scientific Custody",
+          "verified": true,
+          "notes": "Sectioned with diamond wire saw under oil bath to avoid oxidation of olivine crystal faces."
+        },
+        {
+          "date": "2016",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault M-2",
+          "transferType": "Curatorial Transfer",
+          "verified": true,
+          "notes": "Treated with anhydrous isopropyl alcohol dewatering bath and sealed in passivated desiccated envelope."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": false,
+        "uvFluorescence": false,
+        "xrfAnalysis": "Ni 9.15%, Ir 19.0 ppm, Ga 24.6 ppm, Ge 68.3 ppm (Kamacite band Widmanstätten pattern)",
+        "radiographyScan": true
+      },
+      "curatorialNotes": "Pallasites represent the boundary zone between the molten iron core and the silicate mantle of a differentiated asteroid obliterated during early solar system accretion. The golden olivine gems in this section exhibit exceptional gem-quality transparency with no terrestrial shock fracturing.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Seymchan_meteorite_2.jpg",
+      "tags": ["Meteorite", "Pallasite", "Seymchan", "Mineralogy", "Cosmochemistry"],
+      "aspectRatio": 1.25,
+      "catalogNumber": "MIN-SEY-031",
+      "department": "Mineral & Tectonic Repository",
+      "rightsStatement": "Wikimedia Commons / Creative Commons CC-BY-SA 4.0",
+      "location": "Vault M-2 · Nitrogen Chamber 04",
+      "parsedYear": 1967
     },
     {
-      "id": "ADO-1954-008",
-      "title": "Figure with Meat",
-      "date": "1954",
-      "medium": "Oil on canvas",
-      "dimensions": "129.9 × 121.9 cm",
-      "provenanceText": "Painted in London; exhibited at the Institute of Contemporary Arts, London; acquired through the Harriott A. Fox Fund by the Art Institute of Chicago, 1956.",
-      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/en/0/02/Figure_with_Meat_Bacon.jpg",
-      "tags": ["Francis Bacon", "Screaming Popes", "The Visceral Line"],
-      "aspectRatio": 1.06,
-      "catalogNumber": "BAC-MET-054",
-      "department": "Department of Modern and Contemporary Art",
-      "rightsStatement": "Art Institute of Chicago / Fair Use Educational Record",
-      "location": "Art Institute of Chicago (Gallery 297)"
+      "id": "TLI-1880-052",
+      "accessionCode": "TLI-1880-052",
+      "title": "Badakhshan Ultramarine Lapis Lazuli Monolith",
+      "date": "Cretaceous formation · Extracted c. 1880",
+      "acquisitionYear": 1880,
+      "category": "Mineral / Tectonic Specimens",
+      "medium": "Natural Lazurite silicate rock with Calcite veins and Pyrite cubic crystal inclusions",
+      "mediumSubstrate": "(Na,Ca)8[(S,Cl,SO4,OH)2|(Al6Si6O24)] tectosilicate, contact metamorphic marble host rock",
+      "dimensions": "31.5 × 22.0 × 14.5 cm (Mass: 14,850 g)",
+      "conditionGrade": "Grade II (Stabilized)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault M-1 · Mineral Repository",
+        "targetRH": "45.0% ± 4% RH",
+        "temperatureRange": "20.0°C ± 1.5°C",
+        "atmosphericEnvironment": "Dust-free filtered air, ambient pressure, vibration-damped plinth",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Extracted from the ancient Sar-e-Sang deposits, Kokcha River Valley, Badakhshan Province, Afghanistan; transported via Kabul caravan routes to Peshawar; acquired by British Raj mineralogical survey; Geological Museum London collection; transfer to private registry 2011.",
+      "provenanceChain": [
+        {
+          "date": "c. 1880",
+          "holder": "Sar-e-Sang Guild Miners",
+          "location": "Kokcha Valley, Badakhshan, Afghanistan",
+          "transferType": "Extraction",
+          "verified": true,
+          "notes": "Mined by ancient fire-setting method in deep tunnel workings known continuously since the 4th millennium BCE."
+        },
+        {
+          "date": "1894",
+          "holder": "Geological Survey of India / London Office",
+          "location": "Calcutta / London",
+          "transferType": "Colonial Survey Deposit",
+          "verified": true,
+          "notes": "Catalogued as benchmark reference for true Afghan ultramarine before synthetic French ultramarine dominance."
+        },
+        {
+          "date": "2011",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault M-1",
+          "transferType": "Scholarly Exchange",
+          "verified": true,
+          "notes": "Surface stabilized; crystalline pyrite inclusions verified under petrographic microscopy."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": false,
+        "uvFluorescence": true,
+        "xrfAnalysis": "Raman spectroscopy confirms trisulfur radical anion (S3-) chromophore; FeS2 pyrite crystals intact",
+        "radiographyScan": false
+      },
+      "curatorialNotes": "The Kokcha Valley is the legendary historical source of genuine lapis lazuli used across Pharaonic funerary masks, Renaissance tempera illuminations, and Vermeer's glazes. This specimen exhibits the intense royal deep ultramarine blue matrix sprinkled with brassy pyrite stars and stark white calcite fractures.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Lapis_lazuli_block.jpg",
+      "tags": ["Mineralogy", "Lapis Lazuli", "Badakhshan", "Pigment History", "Ultramarine"],
+      "aspectRatio": 1.15,
+      "catalogNumber": "MIN-LAP-052",
+      "department": "Mineral & Tectonic Repository",
+      "rightsStatement": "Wikimedia Commons / Public Domain Mark 1.0",
+      "location": "Vault M-1 · Plinth 08",
+      "parsedYear": 1880
+    },
+    {
+      "id": "TLI-1911-007",
+      "accessionCode": "TLI-1911-007",
+      "title": "Terra Nova off Cape Evans with Capsizing Iceberg (Herbert Ponting)",
+      "date": "January 1911",
+      "acquisitionYear": 1911,
+      "category": "Sub-Antarctic Ephemera",
+      "medium": "Gelatin silver carbon-toned glass plate contact print on fiber-base paper",
+      "mediumSubstrate": "Baryta-coated heavy rag fiber paper, silver gelatin emulsion, toned with platinum-gold salts",
+      "dimensions": "44.5 × 59.8 cm",
+      "conditionGrade": "Grade II (Stabilized)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault P-9 · Sub-Zero Photographic Cell",
+        "targetRH": "35.0% ± 2% RH",
+        "temperatureRange": "4.0°C ± 0.5°C (Cold Storage)",
+        "atmosphericEnvironment": "Dark cold storage vault, acid-free rag matting, inert polyester enclosures",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Photographed by Herbert Ponting, official camera artist to the British Antarctic Expedition (1910–1913) under Captain Robert Falcon Scott; developed on site at Cape Evans hut darkroom; returned to London 1912; Fine Art Society exhibition print, London, 1914; acquired 2015.",
+      "provenanceChain": [
+        {
+          "date": "1911",
+          "holder": "Herbert Ponting / British Antarctic Expedition",
+          "location": "Cape Evans, Ross Island, Antarctica",
+          "transferType": "Field Exposure & Processing",
+          "verified": true,
+          "notes": "Exposed on a 10×8-inch plate glass negative inside Ponting's cramped darkroom cubicle during the freeze-up."
+        },
+        {
+          "date": "1914",
+          "holder": "The Fine Art Society",
+          "location": "New Bond Street, London, UK",
+          "transferType": "Exhibition Print",
+          "verified": true,
+          "notes": "Printed under Ponting's direct supervision to raise funds for the Scott Memorial Trust."
+        },
+        {
+          "date": "2015",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault P-9",
+          "transferType": "Antiquarian Trust Acquisition",
+          "verified": true,
+          "notes": "Surface silver mirroring stabilized with micro-crystalline wax treatment; cold storage chain uninterrupted."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": true,
+        "uvFluorescence": true,
+        "xrfAnalysis": "Silver image particles with traces of gold toning salts; zero sulfurous atmospheric tarnishing",
+        "radiographyScan": false
+      },
+      "curatorialNotes": "Herbert Ponting was the first professional photographer attached to an Antarctic expedition. This dramatic frame captures the expedition barque Terra Nova framed by the arched grotto of a collapsing iceberg in McMurdo Sound. Ponting noted that moments after this exposure, the berg violently overturned, nearly engulfing the expedition's boat.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/The_Terra_Nova_off_Cape_Evans_with_capsizing_Berg%2C_January_1911%2C_Herbert_Ponting.jpg",
+      "tags": ["Antarctica", "Terra Nova", "Herbert Ponting", "Scott Expedition", "Photography"],
+      "aspectRatio": 1.34,
+      "catalogNumber": "ANT-PON-007",
+      "department": "Polar Ephemera & Early Photography",
+      "rightsStatement": "Royal Geographical Society / Wikimedia Commons Public Domain",
+      "location": "Vault P-9 · Drawer 01",
+      "parsedYear": 1911
+    },
+    {
+      "id": "TLI-1915-014",
+      "accessionCode": "TLI-1915-014",
+      "title": "Endurance Trapped in the Weddell Sea Pack Ice (Frank Hurley)",
+      "date": "August 1915",
+      "acquisitionYear": 1915,
+      "category": "Sub-Antarctic Ephemera",
+      "medium": "Paget plate flashlit silver bromide contact print with hand-toned highlights",
+      "mediumSubstrate": "Imperial dry plate silver bromide emulsion on glass substrate, contact printed on Ilford bromide paper",
+      "dimensions": "38.2 × 48.0 cm",
+      "conditionGrade": "Grade III (Conservation Required)",
+      "storageMicroclimate": {
+        "vaultDesignation": "Vault P-9 · Sub-Zero Photographic Cell",
+        "targetRH": "30.0% ± 2% RH",
+        "temperatureRange": "2.0°C ± 0.5°C (Deep Chill)",
+        "atmosphericEnvironment": "Individual anodized aluminum archival cassette with desiccated zeolites",
+        "sensorTelemetry": "Sensirion SHT45 Calibrated"
+      },
+      "provenanceText": "Photographed by James Francis 'Frank' Hurley, official photographer to Sir Ernest Shackleton's Imperial Trans-Antarctic Expedition (1914–1917); salvaged during the sinking of the Endurance from the submerged hold; cached in lead canisters on the ice pack; Mitchell Library, Sydney; private acquisition 2021.",
+      "provenanceChain": [
+        {
+          "date": "1915",
+          "holder": "Frank Hurley / Imperial Trans-Antarctic Expedition",
+          "location": "Weddell Sea Pack Ice, Antarctica",
+          "transferType": "Night Exposure",
+          "verified": true,
+          "notes": "Illuminated using twenty synchronized magnesium flash flares arranged around the pressure ice ridges."
+        },
+        {
+          "date": "1915",
+          "holder": "Sir Ernest Shackleton & Frank Hurley",
+          "location": "Ocean Camp, Weddell Sea Ice Floe",
+          "transferType": "Emergency Salvage",
+          "verified": true,
+          "notes": "Hurley dove into waist-deep icy water in the sinking wreck to retrieve the sealed tin boxes containing 120 selected glass plates; remaining 400 plates smashed on the ice to prevent excess weight."
+        },
+        {
+          "date": "2021",
+          "holder": "The Living Index Archival Trust",
+          "location": "Vault P-9",
+          "transferType": "Conservation Trust Escrow",
+          "verified": true,
+          "notes": "Emulsion edge frilling stabilized under controlled low-temperature consolidation."
+        }
+      ],
+      "spectralImaging": {
+        "infraredReflectography": true,
+        "uvFluorescence": true,
+        "xrfAnalysis": "Magnesium burn residue trace in emulsion border; silver bromide image structure verified",
+        "radiographyScan": false
+      },
+      "curatorialNotes": "Taken during the long polar night as the three-masted barquentine Endurance was subjected to crushing rafted ice pressure. Hurley rigged electrical wires in sub-zero blizzards to ignite flash charges simultaneously. The resulting image reveals the ghost-like rigging encrusted in rime ice amidst towering pressure seracs.",
+      "highResImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Endurance_trapped_in_pack_ice.jpg",
+      "tags": ["Antarctica", "Shackleton", "Endurance", "Frank Hurley", "Pack Ice"],
+      "aspectRatio": 1.28,
+      "catalogNumber": "ANT-HUR-014",
+      "department": "Polar Ephemera & Early Photography",
+      "rightsStatement": "State Library of NSW / Wikimedia Commons Public Domain",
+      "location": "Vault P-9 · Cassette 14",
+      "parsedYear": 1915
     }
   ]
 }
