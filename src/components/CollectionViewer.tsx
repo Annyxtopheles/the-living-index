@@ -4,7 +4,7 @@ import React, { useState, useMemo } from "react";
 import { CollectionDatabase, ArchivalItem, ObjectCategory } from "@/types/schema";
 import { CuratorialHeader } from "./CuratorialHeader";
 import { MuseumLabel } from "./MuseumLabel";
-import { SpecimenLightbox } from "./SpecimenLightbox";
+import { SpecimenDossier } from "./SpecimenDossier";
 import { Colophon } from "./Colophon";
 import { toRomanNumeral, cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -452,8 +452,8 @@ export const CollectionViewer: React.FC<CollectionViewerProps> = ({ initialData 
         <Colophon metadata={collectionMetadata} />
       </div>
 
-      {/* Optical Specimen Lightbox / Slide-Out Specimen Dossier */}
-      <SpecimenLightbox
+      {/* Slide-Out Curatorial Specimen Dossier & Inspection Suite */}
+      <SpecimenDossier
         item={activeSpecimen}
         items={filteredItems}
         onClose={() => setActiveSpecimen(null)}
