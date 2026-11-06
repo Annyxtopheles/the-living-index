@@ -1,30 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-bg: #FAF7F2; /* Warm aged bone ivory / archival rag paper */
-  --color-surface: #F2EDE4; /* Soft vellum */
-  --color-text-primary: #141211; /* Archival bone-black / iron gall carbon ink */
-  --color-text-secondary: #68615A; /* Warm graphite */
-  --color-accent: #421515; /* Deep dried oxblood / raw shadow umber */
-  --color-border: #E5DFD4; /* Delicate parchment hairline */
-  --color-specimen-bg: #0B0A09; /* Optical gallery blackout */
-  --font-heading: 'Cinzel', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --color-bg: #FAF8F5; /* Archival bone white / 100% cotton rag */
+  --color-surface: #F2EFE9; /* Pressed vellum surface */
+  --color-text-primary: #141211; /* Archival bone-black / iron-gall carbon ink */
+  --color-text-secondary: #68625B; /* Warm graphite pencil */
+  --color-accent: #3E1414; /* Deep oxidized hematite / seal wax */
+  --color-border: rgba(20, 18, 17, 0.09); /* 1px hairline archival rule */
+  --color-specimen-bg: #0E0D0C; /* Deep basalt charcoal optical cavity */
+  --font-heading: 'Newsreader', 'Playfair Display', 'Cinzel', Georgia, serif;
   --font-body: 'Newsreader', Georgia, serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', 'Space Mono', Consolas, monospace;
 }
 
-/* Procedural tactile paper grain texture across the canvas */
 body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
@@ -39,16 +38,21 @@ body::before {
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.024;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 ::selection {
   background-color: var(--color-accent);
-  color: var(--color-bg);
+  color: #FAF8F5;
 }
 
-h1, h2, h3, .font-heading {
+:focus-visible {
+  outline: 1.5px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4, .font-heading {
   font-family: var(--font-heading);
   text-wrap: balance;
 }
@@ -60,27 +64,108 @@ p, blockquote, .font-body {
 
 code, kbd, samp, pre, .font-mono {
   font-family: var(--font-mono);
-  font-feature-settings: "zero" 1;
+  font-feature-settings: "zero" 1, "tnum" 1;
 }
 
-/* Archival passe-partout shadow and framing */
+/* Archival passe-partout mat framing */
 .archival-mat {
-  background-color: #F6F3EC;
-  border: 1px solid rgba(43, 26, 18, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 20px 40px -15px rgba(43, 26, 18, 0.04);
+  background-color: #F7F5F0;
+  border: 1px solid rgba(20, 18, 17, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 12px 28px -10px rgba(20, 18, 17, 0.06);
 }
 
-/* Discreet gallery scrollbar */
+/* Curatorial millimeter inspection grid */
+.inspection-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+  background-position: center center;
+}
+
+/* Crosshair overlay */
+.inspection-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.inspection-crosshair::before,
+.inspection-crosshair::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+}
+.inspection-crosshair::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+.inspection-crosshair::after {
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 1px;
+}
+
+/* Discreet archival scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: rgba(20, 18, 17, 0.18);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Museum Accession Placard Print Styling */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  header, nav, footer, .no-print, [role="banner"], [role="navigation"] {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  #printable-accession-placard {
+    display: block !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 6in !important;
+    height: 4in !important;
+    padding: 0.25in !important;
+    margin: 0 !important;
+    background: #FFFFFF !important;
+    border: 2px solid #000000 !important;
+    box-sizing: border-box !important;
+    page-break-inside: avoid !important;
+  }
 }
